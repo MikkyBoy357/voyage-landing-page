@@ -1,10 +1,26 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Poor_Story } from 'next/font/google';
+import localFont from 'next/font/local';
 import "./globals.css";
+
+// Load local font
+const poorStory = localFont({
+  src: './fonts/PoorStory-Regular.ttf',
+  display: 'swap',
+  variable: '--font-poor-story',
+  weight: '400',
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+});
+
+const poppins = Geist({
+  variable: "--font-poppins",
+  subsets: ["latin"],
+  weight: ["400", "700"], // Adjust weights as needed
 });
 
 const geistMono = Geist_Mono({
@@ -25,7 +41,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${poppins.variable} ${poorStory.variable} antialiased`}
       >
         {children}
       </body>
