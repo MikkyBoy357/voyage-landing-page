@@ -19,7 +19,7 @@ type AnimatedImageStackProps = {
 const AnimatedImageStack = ({  images, size = { width: 400 } }: AnimatedImageStackProps)=> {
   const [activeIndex, setActiveIndex] = useState(0)
   const [isHovering, setIsHovering] = useState(false)
-  const [isSpread, setIsSpread] = useState(true) // Set to true by default
+  const [isSpread, setIsSpread] = useState(true) // Set to true by default 
   const [touchStart, setTouchStart] = useState<number | null>(null)
   const [touchEnd, setTouchEnd] = useState<number | null>(null)
   const [isDragging, setIsDragging] = useState(false)
