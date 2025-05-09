@@ -6,20 +6,17 @@ export default function TravelCategories() {
     {
       title: "Road Trip",
       description: "Explore scenic highways and hidden pathways",
-      image: "https://s3-alpha-sig.figma.com/img/5e4d/2116/2b26706dbb701c6f268e3e13d9565b99?Expires=1744588800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=sRDTF679jeLtCgW2lotIBz8Zo0cLyy~la8YLxWCl95ua3QfV7IVMdTsaRPpa7vnfzDVyjFfRypWmaZBoJzbQyqrltuL2oPnhm-OhDONM2y2EZWQkAnsUZW66isKloPN7ulGqw-HDZWyVZpKyyGdDlaRnX4x0gQ6T5NAJauvGXivLLiZnqgnp-Ucwt72UnKmDy8h9XZ-rS2QcoMZ~U0SnHajmcjom4VL8xJLNh8n-0f5FX2pD9yHQg0l2F1HtTvrOtQXRoueFbzsVNbWY6~0ehAL4mjrA4HRnpkkc1fLI7CalXgsG3TuDSj1k9BUzhNMtLfZSUc50lwzWy5kPnnoRuw__",
-      href: "/categories/road-trip",
+      image: "https://firebasestorage.googleapis.com/v0/b/flash-chat-3a9a7.appspot.com/o/voyage%2Fsection3(1).png?alt=media&token=848532f7-4485-4117-bd0d-8c10aa6d5248"
     },
     {
       title: "Beach Trip",
       description: "Relax on pristine shores and coastal paradises",
-      image: "https://s3-alpha-sig.figma.com/img/f3e4/e8f3/1a9e30eb149922f52b9068515c639f79?Expires=1744588800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=P4shwAhzmwczDz2CeeRIoyTFZPUpYuiIT97V0W3n1u-fgg8JI101MdLjc7e9XAWFczkRSGXnqUHTCeLidVzu5mRAUj531m~S77gCvAErcUPLUjxsATSvW-GOllmzK6EtYHuPWirh-pc3rjKbzY3HSK3U5TqpVMpZnE0ngzUns5YFf7zz3iXoNq0tJMoS5nlpJ4UsJTlprdotlToKOMUmI-IAxw9x4i0UyD-Ii7eMkt0dV1~JpEsRp07LHWLe41SX4eNb-z4E16-8pEJcMBbbWZo6FXNhbye4bkcqn0pGGTO1yOA2oCt9CoUNUJaoPc6BE6dmjkJYCA6nKRitPSHAIg__",
-      href: "/categories/beach-trip",
+      image: "https://firebasestorage.googleapis.com/v0/b/flash-chat-3a9a7.appspot.com/o/voyage%2Fsection3(2).png?alt=media&token=def19f3f-22dd-4a6d-be82-8402f6dec36e",
     },
     {
       title: "Off-Site Tours",
       description: "Discover hidden gems and local adventures",
-      image: "https://s3-alpha-sig.figma.com/img/52bf/3051/ee841fd89c2d6767d13d34472e65692c?Expires=1744588800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=WFixMksxBbr~dlTTj-SHijaT7yKBI6Im7kkWe~34FPCN-jNBpZZr1SeNJAlTjE6azeFIcV3V1NT6l~5hHbG-0rd099Zl6Jlk55qj5tlYN~CXtOZJpV4v0AlhcPDfx0PjJRtjepQsXzRvaNZ6m2W8iyqbDmhKHNtJ6qQiJc5yQRhZt3C5Wg0cZXwVe06NhZzjx3c0LFvnnO2bMoxP8i~CLb07W78AhdU228bnIUCt45Kdzgrw-0OwhlF6c6Q1rgOdZ6nKWmtt-lSlov281mOFXYDThdSALXAwcz0evV2hbOnmcPnp9WUwLvx5D4~yTs6ZXQsVWAqOmt85HCSZoYGqHQ__",
-      href: "/categories/off-site-tours",
+      image: "https://firebasestorage.googleapis.com/v0/b/flash-chat-3a9a7.appspot.com/o/voyage%2Fsection3(3).png?alt=media&token=b0dc948f-c712-4854-a8e0-bfb7cf6f71c0",
     },
   ];
 
@@ -39,8 +36,8 @@ export default function TravelCategories() {
         {/* Category Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-12">
           {categories.map((category, index) => (
-            <Link
-              href={category.href}
+            <div
+              
               key={index}
               className="block transform transition duration-500 hover:-translate-y-4 hover:shadow-2xl"
             >
@@ -69,7 +66,7 @@ export default function TravelCategories() {
 
                 </div>
               </div>
-            </Link>
+            </div>
           ))}
         </div>
       </div>
