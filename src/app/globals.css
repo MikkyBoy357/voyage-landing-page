@@ -24,10 +24,20 @@
 }
 
 @layer utilities {
-  .font-poor {
+  .font-rammeto-one {
+    font-family: var(--font-rammeto-one), cursive;
+  }
+  .font-poor-story {
     font-family: var(--font-poor-story), cursive;
   }
+  .font-grape-nuts {
+    font-family: var(--font-grape-nuts), cursive;
+  }
+  .font-princess-sofia {
+    font-family: var(--font-princess-sofia), cursive;
+  }
 }
+
 
 body {
   background: var(--background);
