@@ -6,6 +6,7 @@ import TravelCategories from "./components/travel-categories"
 import PopularTours from "./components/popular-tours"
 import Footer from "./components/footer"
 import Logo from "./components/logo"
+import StoryStack from "./components/story-stack"
 import { useState, useEffect } from "react"
 import { MapPin, Calendar, Users, ArrowRight, Menu, X } from "lucide-react"
 
@@ -226,36 +227,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Images */}
-            <div className="relative h-[400px] md:h-[550px] order-2 lg:order-1">
-              <div className="absolute left-[5%] top-[12%] w-[55%] h-[75%] rounded-lg overflow-hidden shadow-2xl">
-                <Image
-                  src="/images/about-1.jpg"
-                  alt="Travel experience"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 60vw, 30vw"
-                />
-              </div>
-              <div className="absolute right-[5%] top-0 w-[55%] h-[75%] rounded-lg overflow-hidden shadow-2xl border border-[#C8A960]/10">
-                <Image
-                  src="/images/about-2.jpg"
-                  alt="Travel destination"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 60vw, 30vw"
-                />
-              </div>
-              <div className="absolute left-[20%] bottom-0 w-[55%] h-[45%] rounded-lg overflow-hidden shadow-2xl border-2 border-[#C8A960]/20">
-                <Image
-                  src="/images/about-3.jpg"
-                  alt="Adventure awaits"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 60vw, 30vw"
-                  priority
-                />
-              </div>
-            </div>
+            <StoryStack />
 
             {/* Text */}
             <div className="order-1 lg:order-2">
