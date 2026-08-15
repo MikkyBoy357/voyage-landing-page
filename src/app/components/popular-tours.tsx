@@ -92,6 +92,20 @@ const PopularTours = () => {
             </Link>
           ))}
         </div>
+
+        {/* View All */}
+        <div className="text-center mt-12">
+          <Link
+            href="/tours"
+            className="group inline-flex items-center gap-3 border border-[#C8A960] text-[#C8A960] px-8 py-4 text-sm tracking-widest uppercase font-semibold hover:bg-[#C8A960] hover:text-[#0B0F19] transition-all duration-300"
+          >
+            View All Tours
+            <ArrowRight
+              size={14}
+              className="group-hover:translate-x-1 transition-transform"
+            />
+          </Link>
+        </div>
       </div>
     </section>
   )

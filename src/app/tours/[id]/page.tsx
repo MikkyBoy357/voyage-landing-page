@@ -339,7 +339,7 @@ export default async function TourPage({
         {/* Back */}
         <div className="mt-12 text-center">
           <Link
-            href="/#tours"
+            href="/tours"
             className="inline-flex items-center gap-2 text-[#C8A960] text-sm tracking-wider uppercase hover:gap-3 transition-all"
           >
             <ArrowRight size={14} className="rotate-180" /> Back to All Tours
