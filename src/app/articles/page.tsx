@@ -33,7 +33,7 @@ export default function ArticlesPage() {
             href={`/articles/${featured.id}`}
             className="group block"
           >
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 bg-[#111827] border border-[#C8A960]/10 overflow-hidden hover:border-[#C8A960]/30 transition-all duration-500">
+            <div className="card-lift grid grid-cols-1 lg:grid-cols-2 gap-0 bg-[#111827] border border-[#C8A960]/10 overflow-hidden hover:border-[#C8A960]/30">
               <div className="aspect-[16/10] lg:aspect-auto lg:min-h-[400px] relative overflow-hidden">
                 <Image
                   src={featured.coverImage}
@@ -86,7 +86,7 @@ export default function ArticlesPage() {
               <Link
                 key={article.id}
                 href={`/articles/${article.id}`}
-                className="group block bg-[#111827] border border-[#C8A960]/10 overflow-hidden hover:border-[#C8A960]/30 transition-all duration-500"
+                className="card-lift group block bg-[#111827] border border-[#C8A960]/10 overflow-hidden hover:border-[#C8A960]/30"
               >
                 <div className="aspect-[16/10] relative overflow-hidden">
                   <Image

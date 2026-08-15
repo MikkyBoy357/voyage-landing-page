@@ -387,7 +387,7 @@ export default function Home() {
               <Link
                 key={i}
                 href={`/articles/${i + 1}`}
-                className="group block bg-[#111827] border border-[#C8A960]/10 overflow-hidden hover:border-[#C8A960]/30 transition-all duration-500"
+                className="card-lift group block bg-[#111827] border border-[#C8A960]/10 overflow-hidden hover:border-[#C8A960]/30"
               >
                 <div className="aspect-[16/10] relative overflow-hidden">
                   <Image

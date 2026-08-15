@@ -50,6 +50,61 @@ body {
   background-clip: text;
 }
 
+/* Cards lift out of the page on hover, with a gold rim to catch the eye */
+.card-lift {
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 0.5s ease, border-color 0.5s ease;
+}
+
+.card-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 45px -14px rgba(0, 0, 0, 0.75),
+    0 10px 30px -12px rgba(200, 169, 96, 0.28);
+}
+
+/* Warm halo behind primary calls to action */
+.gold-glow {
+  box-shadow: 0 0 0 rgba(200, 169, 96, 0);
+  transition: box-shadow 0.4s ease, transform 0.4s ease;
+}
+
+.gold-glow:hover {
+  box-shadow: 0 8px 28px -8px rgba(200, 169, 96, 0.5);
+  transform: translateY(-2px);
+}
+
+/* Faint film grain so large flat panels don't read as dead space */
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Hairline gold rule that fades at both ends */
+.rule-gold {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(200, 169, 96, 0.35),
+    transparent
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-lift,
+  .gold-glow {
+    transition: none;
+  }
+  .card-lift:hover,
+  .gold-glow:hover {
+    transform: none;
+  }
+}
+
 /* Parallax helper */
 .bg-fixed-safe {
   background-attachment: fixed;

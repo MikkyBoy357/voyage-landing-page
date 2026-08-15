@@ -9,7 +9,7 @@ const PopularTours = () => {
   const tours = upcoming.length > 0 ? upcoming : getAllTours()
 
   return (
-    <section className="relative py-16 md:py-24 bg-[#111827] overflow-hidden">
+    <section className="relative py-16 md:py-24 bg-[#111827] overflow-hidden grain">
       {/* Decorative blurs */}
       <div className="absolute top-0 left-0 w-72 h-72 bg-[#C8A960]/5 rounded-full blur-3xl" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#C8A960]/5 rounded-full blur-3xl" />
@@ -36,7 +36,7 @@ const PopularTours = () => {
             <Link
               key={tour.id}
               href={`/tours/${tour.id}`}
-              className="group block bg-[#0B0F19] border border-[#C8A960]/10 overflow-hidden hover:border-[#C8A960]/40 transition-all duration-500"
+              className="card-lift group block bg-[#0B0F19] border border-[#C8A960]/10 overflow-hidden hover:border-[#C8A960]/40"
             >
               {/* Image */}
               <div className="aspect-[16/10] relative overflow-hidden">
@@ -99,7 +99,7 @@ const PopularTours = () => {
         <div className="text-center mt-12">
           <Link
             href="/tours"
-            className="group inline-flex items-center gap-3 border border-[#C8A960] text-[#C8A960] px-8 py-4 text-sm tracking-widest uppercase font-semibold hover:bg-[#C8A960] hover:text-[#0B0F19] transition-all duration-300"
+            className="gold-glow group inline-flex items-center gap-3 border border-[#C8A960] text-[#C8A960] px-8 py-4 text-sm tracking-widest uppercase font-semibold hover:bg-[#C8A960] hover:text-[#0B0F19] transition-colors duration-300"
           >
             View All Tours
             <ArrowRight

@@ -1,6 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
-import { getUpcomingTours, getPastTours, type Tour } from "./data"
+import { getUpcomingTours, getPastTours, getAllTours, type Tour } from "./data"
 import {
   Calendar,
   Users,
@@ -25,7 +25,7 @@ function TourCard({
   return (
     <Link
       href={`/tours/${tour.id}`}
-      className={`group flex flex-col bg-[#111827] border overflow-hidden transition-all duration-500 ${
+      className={`card-lift group flex flex-col bg-[#111827] border overflow-hidden ${
         departed
           ? "border-white/5 opacity-50 hover:opacity-100 hover:border-[#C8A960]/20"
           : "border-[#C8A960]/10 hover:border-[#C8A960]/40"
@@ -97,9 +97,19 @@ function TourCard({
   )
 }
 
-export default function ToursPage() {
-  const upcoming = getUpcomingTours()
-  const past = getPastTours()
+export default async function ToursPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ category?: string }>
+}) {
+  const { category } = await searchParams
+  const allCategories = [...new Set(getAllTours().map((t) => t.category))].sort()
+  // An unrecognised ?category= should show everything rather than an empty page.
+  const active = category && allCategories.includes(category) ? category : null
+  const byCategory = (t: Tour) => !active || t.category === active
+
+  const upcoming = getUpcomingTours().filter(byCategory)
+  const past = getPastTours().filter(byCategory)
 
   const destinations = new Set(upcoming.map((t) => t.destination)).size
   const lowestPrice = upcoming.length
@@ -166,6 +176,35 @@ export default function ToursPage() {
         </div>
       </div>
 
+      {/* Category filter */}
+      <section className="pt-10">
+        <div className="max-w-7xl mx-auto px-6 md:px-8 flex flex-wrap gap-2">
+          <Link
+            href="/tours"
+            className={`px-4 py-2 text-xs tracking-widest uppercase border transition-all duration-300 ${
+              active
+                ? "border-[#C8A960]/20 text-[#FAF6EE]/50 hover:border-[#C8A960]/50 hover:text-[#C8A960]"
+                : "border-[#C8A960] bg-[#C8A960] text-[#0B0F19] font-semibold"
+            }`}
+          >
+            All
+          </Link>
+          {allCategories.map((c) => (
+            <Link
+              key={c}
+              href={`/tours?category=${encodeURIComponent(c)}`}
+              className={`px-4 py-2 text-xs tracking-widest uppercase border transition-all duration-300 ${
+                active === c
+                  ? "border-[#C8A960] bg-[#C8A960] text-[#0B0F19] font-semibold"
+                  : "border-[#C8A960]/20 text-[#FAF6EE]/50 hover:border-[#C8A960]/50 hover:text-[#C8A960]"
+              }`}
+            >
+              {c}
+            </Link>
+          ))}
+        </div>
+      </section>
+
       {/* Upcoming Tours */}
       <section className="py-12 md:py-16">
         <div className="max-w-7xl mx-auto px-6 md:px-8">
@@ -178,13 +217,22 @@ export default function ToursPage() {
           ) : (
             <div className="border border-[#C8A960]/10 bg-[#111827] p-10 md:p-16 text-center">
               <h2 className="text-xl md:text-2xl font-bold text-white font-playfair mb-3">
-                Next Season Is Being{" "}
-                <span className="text-gradient-gold">Planned</span>
+                {active ? (
+                  <>
+                    Nothing Bookable In{" "}
+                    <span className="text-gradient-gold">{active}</span>
+                  </>
+                ) : (
+                  <>
+                    Next Season Is Being{" "}
+                    <span className="text-gradient-gold">Planned</span>
+                  </>
+                )}
               </h2>
               <p className="text-[#FAF6EE]/50 max-w-lg mx-auto">
-                We don&apos;t have dated departures on sale right now. Tell us
-                where you&apos;d like to go and we&apos;ll let you know the
-                moment the next season opens.
+                {active
+                  ? "Every departure in this category has already set off. Browse the other categories, or tell us where you'd like to go."
+                  : "We don't have dated departures on sale right now. Tell us where you'd like to go and we'll let you know the moment the next season opens."}
               </p>
             </div>
           )}
@@ -226,7 +274,7 @@ export default function ToursPage() {
             </p>
             <Link
               href="/#contact"
-              className="group inline-flex items-center justify-center gap-3 border border-[#C8A960] text-[#C8A960] px-8 py-4 text-sm tracking-widest uppercase font-semibold hover:bg-[#C8A960] hover:text-[#0B0F19] transition-all duration-300"
+              className="gold-glow group inline-flex items-center justify-center gap-3 border border-[#C8A960] text-[#C8A960] px-8 py-4 text-sm tracking-widest uppercase font-semibold hover:bg-[#C8A960] hover:text-[#0B0F19] transition-colors duration-300"
             >
               Plan a Custom Journey
               <ArrowRight
