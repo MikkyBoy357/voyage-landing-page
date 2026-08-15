@@ -15,6 +15,11 @@ const playfair = Playfair_Display({
   display: "swap",
 });
 
+// Tour listings split on today's date, so prerendered pages go stale after a
+// day. Set here rather than per-page because the home page is a client
+// component and cannot export route segment config itself.
+export const revalidate = 86400;
+
 export const metadata: Metadata = {
   title: "BLAZE UNIVERSAL TOURS 🔱 | Extraordinary Travel Experiences",
   description: "Discover extraordinary destinations with BLAZE UNIVERSAL TOURS. Premium guided tours, exclusive experiences, and unforgettable adventures across the globe.",

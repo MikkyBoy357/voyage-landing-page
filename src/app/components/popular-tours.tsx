@@ -1,10 +1,12 @@
 import Image from "next/image"
 import Link from "next/link"
-import { getAllTours } from "../tours/data"
+import { getAllTours, getUpcomingTours } from "../tours/data"
 import { Calendar, Users, Clock, MapPin, ArrowRight } from "lucide-react"
 
 const PopularTours = () => {
-  const tours = getAllTours()
+  // Fall back to the full list so the section is never empty between seasons.
+  const upcoming = getUpcomingTours()
+  const tours = upcoming.length > 0 ? upcoming : getAllTours()
 
   return (
     <section className="relative py-16 md:py-24 bg-[#111827] overflow-hidden">

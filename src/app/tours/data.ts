@@ -680,3 +680,32 @@ export function getTour(id: number): Tour | undefined {
 export function getAllTours(): Tour[] {
   return tours
 }
+
+function departureTime(tour: Tour): number {
+  return new Date(tour.startDate).getTime()
+}
+
+/** Midnight today, so a tour stays bookable for the whole of its departure day. */
+function startOfDay(date: Date): number {
+  const d = new Date(date)
+  d.setHours(0, 0, 0, 0)
+  return d.getTime()
+}
+
+export function hasDeparted(tour: Tour, now: Date = new Date()): boolean {
+  return departureTime(tour) < startOfDay(now)
+}
+
+/** Still bookable, soonest departure first. */
+export function getUpcomingTours(now: Date = new Date()): Tour[] {
+  return tours
+    .filter((t) => !hasDeparted(t, now))
+    .sort((a, b) => departureTime(a) - departureTime(b))
+}
+
+/** Already departed, most recent first. */
+export function getPastTours(now: Date = new Date()): Tour[] {
+  return tours
+    .filter((t) => hasDeparted(t, now))
+    .sort((a, b) => departureTime(b) - departureTime(a))
+}

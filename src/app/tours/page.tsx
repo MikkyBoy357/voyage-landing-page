@@ -1,6 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
-import { getAllTours } from "./data"
+import { getUpcomingTours, getPastTours, type Tour } from "./data"
 import {
   Calendar,
   Users,
@@ -15,18 +15,100 @@ function toNumber(value: string): number {
   return Number(value.replace(/[^0-9]/g, ""))
 }
 
-export default function ToursPage() {
-  const tours = [...getAllTours()].sort(
-    (a, b) =>
-      new Date(a.startDate).getTime() - new Date(b.startDate).getTime()
-  )
+function TourCard({
+  tour,
+  departed = false,
+}: {
+  tour: Tour
+  departed?: boolean
+}) {
+  return (
+    <Link
+      href={`/tours/${tour.id}`}
+      className={`group flex flex-col bg-[#111827] border overflow-hidden transition-all duration-500 ${
+        departed
+          ? "border-white/5 opacity-50 hover:opacity-100 hover:border-[#C8A960]/20"
+          : "border-[#C8A960]/10 hover:border-[#C8A960]/40"
+      }`}
+    >
+      {/* Image */}
+      <div className="aspect-[16/10] relative overflow-hidden">
+        <Image
+          src={tour.coverImage}
+          alt={tour.title}
+          fill
+          className={`object-cover group-hover:scale-105 transition-all duration-700 ${
+            departed ? "grayscale group-hover:grayscale-0" : ""
+          }`}
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#111827] to-transparent" />
+        <span className="absolute top-4 left-4 text-[10px] tracking-widest uppercase text-[#C8A960] bg-[#0B0F19]/80 px-3 py-1">
+          {tour.category}
+        </span>
+        {departed ? (
+          <div className="absolute top-4 right-4 bg-[#0B0F19]/80 text-[#FAF6EE]/50 px-3 py-1 text-[10px] tracking-widest uppercase">
+            Departed
+          </div>
+        ) : (
+          <div className="absolute top-4 right-4 bg-[#C8A960] text-[#0B0F19] px-3 py-1 text-sm font-bold">
+            {tour.price}
+          </div>
+        )}
+      </div>
 
-  const destinations = new Set(tours.map((t) => t.destination)).size
-  const lowestPrice = tours.reduce(
-    (min, t) => (toNumber(t.price) < toNumber(min) ? t.price : min),
-    tours[0].price
+      {/* Content */}
+      <div className="p-6 flex flex-col flex-1">
+        <div className="flex items-center gap-2 text-[#C8A960] text-xs mb-3">
+          <MapPin size={12} />
+          <span className="tracking-wider uppercase">{tour.destination}</span>
+        </div>
+        <h3 className="text-lg font-bold text-white group-hover:text-[#C8A960] transition-colors font-playfair mb-2">
+          {tour.title}
+        </h3>
+        <p className="text-[#FAF6EE]/40 text-sm mb-4 line-clamp-2">
+          {tour.tagline}
+        </p>
+
+        {/* Meta */}
+        <div className="flex flex-wrap gap-4 text-[11px] text-[#FAF6EE]/30 mb-4">
+          <span className="flex items-center gap-1">
+            <Clock size={11} /> {tour.duration}
+          </span>
+          <span className="flex items-center gap-1">
+            <Users size={11} /> {tour.groupSize}
+          </span>
+          <span className="flex items-center gap-1">
+            <Mountain size={11} /> {tour.difficulty}
+          </span>
+        </div>
+
+        <div className="flex items-center justify-between pt-4 mt-auto border-t border-white/5">
+          <span className="flex items-center gap-1.5 text-xs text-[#FAF6EE]/40">
+            <Calendar size={11} />
+            {tour.startDate}
+          </span>
+          <span className="inline-flex items-center gap-2 text-[#C8A960] text-xs tracking-wider uppercase group-hover:gap-3 transition-all">
+            {departed ? "View Trip" : "View Tour"} <ArrowRight size={12} />
+          </span>
+        </div>
+      </div>
+    </Link>
   )
-  const largestGroup = tours.reduce(
+}
+
+export default function ToursPage() {
+  const upcoming = getUpcomingTours()
+  const past = getPastTours()
+
+  const destinations = new Set(upcoming.map((t) => t.destination)).size
+  const lowestPrice = upcoming.length
+    ? upcoming.reduce(
+        (min, t) => (toNumber(t.price) < toNumber(min) ? t.price : min),
+        upcoming[0].price
+      )
+    : "—"
+  const largestGroup = upcoming.reduce(
     (max, t) => Math.max(max, toNumber(t.groupSize)),
     0
   )
@@ -58,8 +140,12 @@ export default function ToursPage() {
         <div className="max-w-7xl mx-auto px-6 md:px-8 py-6 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
           {[
             { icon: MapPin, label: "Destinations", value: `${destinations}` },
-            { icon: Calendar, label: "Departures", value: `${tours.length}` },
-            { icon: Users, label: "Group Size", value: `Max ${largestGroup}` },
+            { icon: Calendar, label: "Departures", value: `${upcoming.length}` },
+            {
+              icon: Users,
+              label: "Group Size",
+              value: largestGroup ? `Max ${largestGroup}` : "—",
+            },
           ].map(({ icon: Icon, label, value }, i) => (
             <div key={i}>
               <Icon size={18} className="text-[#C8A960] mx-auto mb-2" />
@@ -80,77 +166,51 @@ export default function ToursPage() {
         </div>
       </div>
 
-      {/* Tour Grid */}
+      {/* Upcoming Tours */}
       <section className="py-12 md:py-16">
         <div className="max-w-7xl mx-auto px-6 md:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {tours.map((tour) => (
-              <Link
-                key={tour.id}
-                href={`/tours/${tour.id}`}
-                className="group flex flex-col bg-[#111827] border border-[#C8A960]/10 overflow-hidden hover:border-[#C8A960]/40 transition-all duration-500"
-              >
-                {/* Image */}
-                <div className="aspect-[16/10] relative overflow-hidden">
-                  <Image
-                    src={tour.coverImage}
-                    alt={tour.title}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-700"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#111827] to-transparent" />
-                  <span className="absolute top-4 left-4 text-[10px] tracking-widest uppercase text-[#C8A960] bg-[#0B0F19]/80 px-3 py-1">
-                    {tour.category}
-                  </span>
-                  <div className="absolute top-4 right-4 bg-[#C8A960] text-[#0B0F19] px-3 py-1 text-sm font-bold">
-                    {tour.price}
-                  </div>
-                </div>
-
-                {/* Content */}
-                <div className="p-6 flex flex-col flex-1">
-                  <div className="flex items-center gap-2 text-[#C8A960] text-xs mb-3">
-                    <MapPin size={12} />
-                    <span className="tracking-wider uppercase">
-                      {tour.destination}
-                    </span>
-                  </div>
-                  <h2 className="text-lg font-bold text-white group-hover:text-[#C8A960] transition-colors font-playfair mb-2">
-                    {tour.title}
-                  </h2>
-                  <p className="text-[#FAF6EE]/40 text-sm mb-4 line-clamp-2">
-                    {tour.tagline}
-                  </p>
-
-                  {/* Meta */}
-                  <div className="flex flex-wrap gap-4 text-[11px] text-[#FAF6EE]/30 mb-4">
-                    <span className="flex items-center gap-1">
-                      <Clock size={11} /> {tour.duration}
-                    </span>
-                    <span className="flex items-center gap-1">
-                      <Users size={11} /> {tour.groupSize}
-                    </span>
-                    <span className="flex items-center gap-1">
-                      <Mountain size={11} /> {tour.difficulty}
-                    </span>
-                  </div>
-
-                  <div className="flex items-center justify-between pt-4 mt-auto border-t border-white/5">
-                    <span className="flex items-center gap-1.5 text-xs text-[#FAF6EE]/40">
-                      <Calendar size={11} />
-                      {tour.startDate}
-                    </span>
-                    <span className="inline-flex items-center gap-2 text-[#C8A960] text-xs tracking-wider uppercase group-hover:gap-3 transition-all">
-                      View Tour <ArrowRight size={12} />
-                    </span>
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </div>
+          {upcoming.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+              {upcoming.map((tour) => (
+                <TourCard key={tour.id} tour={tour} />
+              ))}
+            </div>
+          ) : (
+            <div className="border border-[#C8A960]/10 bg-[#111827] p-10 md:p-16 text-center">
+              <h2 className="text-xl md:text-2xl font-bold text-white font-playfair mb-3">
+                Next Season Is Being{" "}
+                <span className="text-gradient-gold">Planned</span>
+              </h2>
+              <p className="text-[#FAF6EE]/50 max-w-lg mx-auto">
+                We don&apos;t have dated departures on sale right now. Tell us
+                where you&apos;d like to go and we&apos;ll let you know the
+                moment the next season opens.
+              </p>
+            </div>
+          )}
         </div>
       </section>
+
+      {/* Past Departures */}
+      {past.length > 0 && (
+        <section className="pb-12 md:pb-16">
+          <div className="max-w-7xl mx-auto px-6 md:px-8">
+            <div className="h-px bg-gradient-to-r from-transparent via-[#C8A960]/30 to-transparent mb-12" />
+            <h2 className="text-2xl font-bold text-white font-playfair mb-2">
+              Past <span className="text-gradient-gold">Departures</span>
+            </h2>
+            <p className="text-[#FAF6EE]/40 text-sm mb-8 max-w-2xl">
+              Journeys that have already set off. Browse them to see how we
+              build a trip — most run again next season.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+              {past.map((tour) => (
+                <TourCard key={tour.id} tour={tour} departed />
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Custom Journey CTA */}
       <section className="pb-16 md:pb-24">
