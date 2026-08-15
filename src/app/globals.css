@@ -1,15 +1,15 @@
 @import "tailwindcss";
 
 :root {
-  --blaze-black: #0B0F19;
-  --blaze-dark: #111827;
-  --blaze-navy: #1A1F35;
-  --blaze-gold: #C8A960;
-  --blaze-gold-light: #E4D5A0;
-  --blaze-cream: #FAF6EE;
-  --blaze-white: #FEFDFB;
-  --blaze-gray: #6B7280;
-  --blaze-muted: #9CA3AF;
+  --brand-black: #0B0F19;
+  --brand-dark: #111827;
+  --brand-navy: #1A1F35;
+  --brand-gold: #C8A960;
+  --brand-gold-light: #E4D5A0;
+  --brand-cream: #FAF6EE;
+  --brand-white: #FEFDFB;
+  --brand-gray: #6B7280;
+  --brand-muted: #9CA3AF;
 }
 
 @layer utilities {
@@ -23,8 +23,8 @@ html {
 }
 
 body {
-  background: var(--blaze-black);
-  color: var(--blaze-cream);
+  background: var(--brand-black);
+  color: var(--brand-cream);
   font-family: var(--font-poppins), 'Poppins', sans-serif;
 }
 
@@ -34,11 +34,11 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--blaze-dark);
+  background: var(--brand-dark);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--blaze-gold);
+  background: var(--brand-gold);
   border-radius: 3px;
 }
 
@@ -137,7 +137,7 @@ body {
 .journal-photo figcaption {
   padding: 0.75rem 1rem;
   background: rgba(17, 24, 39, 0.8);
-  color: var(--blaze-gold-light);
+  color: var(--brand-gold-light);
   font-style: italic;
   font-size: 0.875rem;
   text-align: center;

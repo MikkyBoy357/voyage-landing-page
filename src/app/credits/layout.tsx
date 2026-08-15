@@ -1,11 +1,12 @@
 import Link from "next/link"
+import Logo from "../components/logo"
 import { ArrowLeft } from "lucide-react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Image Credits | BLAZE UNIVERSAL TOURS 🔱",
+  title: "Image Credits | Odyssey Horizon",
   description:
-    "Attribution for the photography used across BLAZE UNIVERSAL TOURS, with photographer and licence details for every image.",
+    "Attribution for the photography used across Odyssey Horizon, with photographer and licence details for every image.",
 }
 
 export default function CreditsLayout({
@@ -24,9 +25,8 @@ export default function CreditsLayout({
             <ArrowLeft size={16} />
             <span className="hidden sm:inline">Back to Home</span>
           </Link>
-          <Link href="/" className="text-xl font-bold font-playfair">
-            <span className="text-[#C8A960]">BLAZE</span>
-            <span className="text-white">TOURS</span> 🔱
+          <Link href="/">
+            <Logo className="text-lg md:text-xl" markSize={24} />
           </Link>
           <div className="w-20" />
         </div>
@@ -36,7 +36,7 @@ export default function CreditsLayout({
 
       <footer className="border-t border-[#C8A960]/10 py-8 text-center">
         <p className="text-[#FAF6EE]/30 text-xs">
-          © {new Date().getFullYear()} BLAZE UNIVERSAL TOURS. All rights
+          © {new Date().getFullYear()} Odyssey Horizon. All rights
           reserved.
         </p>
       </footer>

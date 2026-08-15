@@ -1,11 +1,12 @@
 import Link from "next/link"
+import Logo from "../components/logo"
 import { ArrowLeft } from "lucide-react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Journal | BLAZE UNIVERSAL TOURS 🔱",
+  title: "Journal | Odyssey Horizon",
   description:
-    "Travel stories, tips, and experiences from BLAZE UNIVERSAL TOURS. Discover destinations and get inspired for your next journey.",
+    "Travel stories, tips, and experiences from Odyssey Horizon. Discover destinations and get inspired for your next journey.",
 }
 
 export default function ArticlesLayout({
@@ -25,9 +26,8 @@ export default function ArticlesLayout({
             <ArrowLeft size={16} />
             <span className="hidden sm:inline">Back to Home</span>
           </Link>
-          <Link href="/" className="text-xl font-bold font-playfair">
-            <span className="text-[#C8A960]">BLAZE</span>
-            <span className="text-white">TOURS</span> 🔱
+          <Link href="/">
+            <Logo className="text-lg md:text-xl" markSize={24} />
           </Link>
           <div className="w-20" />
         </div>
@@ -37,7 +37,7 @@ export default function ArticlesLayout({
 
       <footer className="border-t border-[#C8A960]/10 py-8 text-center">
         <p className="text-[#FAF6EE]/30 text-xs">
-          © {new Date().getFullYear()} BLAZE UNIVERSAL TOURS. All rights
+          © {new Date().getFullYear()} Odyssey Horizon. All rights
           reserved.
         </p>
       </footer>

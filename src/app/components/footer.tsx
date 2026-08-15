@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Logo from "./logo"
 import {
   Facebook,
   Instagram,
@@ -19,8 +20,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-8">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <h3 className="text-2xl font-bold font-playfair mb-4">
-              <span className="text-[#C8A960]">BLAZE</span> TOURS 🔱
+            <h3 className="mb-4">
+              <Logo className="text-2xl" markSize={30} />
             </h3>
             <p className="text-[#FAF6EE]/50 text-sm leading-relaxed mb-6">
               Crafting extraordinary travel experiences across the globe. Your
@@ -114,7 +115,7 @@ export default function Footer() {
         {/* Bottom */}
         <div className="mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs text-[#FAF6EE]/30">
-            © {new Date().getFullYear()} BLAZE UNIVERSAL TOURS. All rights
+            © {new Date().getFullYear()} Odyssey Horizon. All rights
             reserved.
           </p>
           <div className="flex gap-6 text-xs text-[#FAF6EE]/30">

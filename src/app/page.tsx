@@ -5,6 +5,7 @@ import Link from "next/link"
 import TravelCategories from "./components/travel-categories"
 import PopularTours from "./components/popular-tours"
 import Footer from "./components/footer"
+import Logo from "./components/logo"
 import { useState, useEffect } from "react"
 import { MapPin, Calendar, Users, ArrowRight, Menu, X } from "lucide-react"
 
@@ -43,9 +44,7 @@ export default function Home() {
       >
         <div className="max-w-7xl mx-auto px-4 md:px-8 flex justify-between items-center h-16 md:h-20">
           <Link href="#hero" className="flex items-center gap-2">
-            <span className="text-[#C8A960] text-xl md:text-2xl font-bold tracking-wider font-playfair">
-              BLAZE<span className="text-white">TOURS</span> 🔱
-            </span>
+            <Logo className="text-lg md:text-2xl" markSize={28} />
           </Link>
 
           <div className="hidden md:flex items-center gap-8">
@@ -270,7 +269,7 @@ export default function Home() {
               </h2>
               <div className="w-16 h-0.5 bg-[#C8A960] mb-8" />
               <p className="text-[#FAF6EE]/60 text-base md:text-lg leading-relaxed mb-6">
-                BLAZE UNIVERSAL TOURS was born from a passion for exploration and
+                Odyssey Horizon was born from a passion for exploration and
                 a belief that travel should be transformative. We don&apos;t just
                 plan trips — we architect experiences that leave lasting
                 impressions.

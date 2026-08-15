@@ -21,9 +21,9 @@ const playfair = Playfair_Display({
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: "BLAZE UNIVERSAL TOURS 🔱 | Extraordinary Travel Experiences",
-  description: "Discover extraordinary destinations with BLAZE UNIVERSAL TOURS. Premium guided tours, exclusive experiences, and unforgettable adventures across the globe.",
-  keywords: ["travel", "tours", "luxury travel", "adventure", "guided tours", "BLAZE UNIVERSAL TOURS"],
+  title: "Odyssey Horizon | Extraordinary Travel Experiences",
+  description: "Discover extraordinary destinations with Odyssey Horizon. Premium guided tours, exclusive experiences, and unforgettable adventures across the globe.",
+  keywords: ["travel", "tours", "luxury travel", "adventure", "guided tours", "Odyssey Horizon"],
 };
 
 export default function RootLayout({

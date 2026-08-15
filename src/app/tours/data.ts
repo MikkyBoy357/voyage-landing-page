@@ -115,7 +115,7 @@ export const tours: Tour[] = [
       "Sunset sailing cruise",
       "Wine tasting & cooking class",
       "Airport/port transfers",
-      "Dedicated BLAZE tour leader",
+      "Dedicated Odyssey Horizon tour leader",
     ],
     notIncluded: [
       "International flights",
@@ -226,7 +226,7 @@ export const tours: Tour[] = [
       "All national park fees",
       "Light aircraft Serengeti–Arusha transfer",
       "Airport transfers",
-      "Dedicated BLAZE expedition leader",
+      "Dedicated Odyssey Horizon expedition leader",
     ],
     notIncluded: [
       "International flights",
@@ -318,7 +318,7 @@ export const tours: Tour[] = [
       "Cooking class & yoga sessions",
       "All ground transportation",
       "Airport transfers",
-      "Dedicated BLAZE tour leader",
+      "Dedicated Odyssey Horizon tour leader",
     ],
     notIncluded: [
       "International flights",
@@ -440,7 +440,7 @@ export const tours: Tour[] = [
       "Camel trek & desert camp experience",
       "Cooking class & hammam visit",
       "All ground transfers",
-      "Dedicated BLAZE tour leader",
+      "Dedicated Odyssey Horizon tour leader",
     ],
     notIncluded: [
       "International flights",
@@ -544,7 +544,7 @@ export const tours: Tour[] = [
       "Flåm Railway & stave church entries",
       "Kayaking equipment",
       "Port transfers in Bergen",
-      "Dedicated BLAZE expedition leader",
+      "Dedicated Odyssey Horizon expedition leader",
     ],
     notIncluded: [
       "International flights",
@@ -661,7 +661,7 @@ export const tours: Tour[] = [
       "TeamLab museum entry",
       "Mount Fuji/Hakone day trip transport",
       "Airport transfers",
-      "Dedicated BLAZE cultural guide",
+      "Dedicated Odyssey Horizon cultural guide",
     ],
     notIncluded: [
       "International flights",

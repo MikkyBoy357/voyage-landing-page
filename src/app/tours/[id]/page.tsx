@@ -24,7 +24,7 @@ export async function generateMetadata({
   const tour = getTour(parseInt(id))
   if (!tour) return { title: "Tour Not Found" }
   return {
-    title: `${tour.title} | BLAZE UNIVERSAL TOURS`,
+    title: `${tour.title} | Odyssey Horizon`,
     description: tour.overview,
     openGraph: {
       title: tour.title,
@@ -38,13 +38,13 @@ const WHATSAPP_NUMBER = "229019603836"
 const EMAIL_ADDRESS = "info@blazetours.com"
 
 function buildWhatsAppUrl(tourTitle: string, startDate: string, price: string) {
-  const message = `Hello BLAZE UNIVERSAL TOURS! 🔱\n\nI'm interested in booking the following tour:\n\n🗺️ Tour: ${tourTitle}\n📅 Date: ${startDate}\n💰 Price: ${price}\n\nPlease send me more information about availability, booking process, and any current offers.\n\nThank you!`
+  const message = `Hello Odyssey Horizon!\n\nI'm interested in booking the following tour:\n\n🗺️ Tour: ${tourTitle}\n📅 Date: ${startDate}\n💰 Price: ${price}\n\nPlease send me more information about availability, booking process, and any current offers.\n\nThank you!`
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`
 }
 
 function buildEmailUrl(tourTitle: string, startDate: string, price: string) {
   const subject = `Booking Inquiry — ${tourTitle}`
-  const body = `Hello BLAZE UNIVERSAL TOURS,\n\nI'm interested in booking the following tour:\n\n🗺️ Tour: ${tourTitle}\n📅 Date: ${startDate}\n💰 Price: ${price}\n\nPlease send me more details about availability, booking process, and any current offers.\n\nBest regards`
+  const body = `Hello Odyssey Horizon,\n\nI'm interested in booking the following tour:\n\n🗺️ Tour: ${tourTitle}\n📅 Date: ${startDate}\n💰 Price: ${price}\n\nPlease send me more details about availability, booking process, and any current offers.\n\nBest regards`
   return `mailto:${EMAIL_ADDRESS}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
 }
 

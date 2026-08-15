@@ -42,7 +42,7 @@ The whitewashed buildings cascading down the caldera, punctuated by those iconic
 
 ## Hidden Beaches and Secret Coves
 
-While most visitors flock to the famous **Red Beach** and **Kamari**, our BLAZE tour took us to spots only locals know:
+While most visitors flock to the famous **Red Beach** and **Kamari**, our Odyssey Horizon tour took us to spots only locals know:
 
 - **Vlychada Beach** — with its lunar-like cliff formations carved by wind and waves
 - **Mesa Pigadia** — a secluded cove accessible only by boat
@@ -52,7 +52,7 @@ While most visitors flock to the famous **Red Beach** and **Kamari**, our BLAZE 
 
 <figure class="journal-photo">
 <img src="/images/santorini-2.jpg" alt="Hidden cove along the Santorini coast" />
-<figcaption>One of Santorini's hidden coves — accessible only by boat with BLAZE</figcaption>
+<figcaption>One of Santorini's hidden coves — accessible only by boat with Odyssey Horizon</figcaption>
 </figure>
 
 ## Culinary Discoveries
@@ -84,7 +84,7 @@ A boat trip to **Nea Kameni**, the still-active volcanic island at the center of
 
 ---
 
-*This journey was part of our **Mediterranean Jewels** collection. Contact BLAZE UNIVERSAL TOURS to book your own Santorini experience.*
+*This journey was part of our **Mediterranean Jewels** collection. Contact Odyssey Horizon to book your own Santorini experience.*
 `,
   },
   {
@@ -108,7 +108,7 @@ A boat trip to **Nea Kameni**, the still-active volcanic island at the center of
 
 The Serengeti's name comes from the Maasai word *siringet*, meaning "endless plains" — and driving into this vast landscape for the first time, you understand why. The horizon stretches in every direction, broken only by the occasional acacia tree standing like a sentinel against the golden grassland.
 
-Our BLAZE expedition started in **Arusha**, where we met our guide, Joseph — a third-generation Maasai who grew up on the edge of the Serengeti and knew the land like the back of his hand.
+Our Odyssey Horizon expedition started in **Arusha**, where we met our guide, Joseph — a third-generation Maasai who grew up on the edge of the Serengeti and knew the land like the back of his hand.
 
 <figure class="journal-photo">
 <img src="/images/serengeti-1.jpg" alt="The vast Serengeti plains stretching to the horizon" />
@@ -161,7 +161,7 @@ A visit to a **Maasai village** near the Ngorongoro Crater was deeply moving. Th
 
 ---
 
-*Our **Serengeti & Beyond** expedition runs annually from June to October. Reach out to BLAZE UNIVERSAL TOURS to secure your place.*
+*Our **Serengeti & Beyond** expedition runs annually from June to October. Reach out to Odyssey Horizon to secure your place.*
 `,
   },
   {
@@ -183,7 +183,7 @@ A visit to a **Maasai village** near the Ngorongoro Crater was deeply moving. Th
     content: `
 ## Beyond the Beach Resorts
 
-Most visitors to Bali never venture beyond **Seminyak** and **Kuta**, but our BLAZE journey took us deep into the island's spiritual heart — a world of mist-shrouded temples, emerald rice terraces, and ancient rituals performed at dawn.
+Most visitors to Bali never venture beyond **Seminyak** and **Kuta**, but our Odyssey Horizon journey took us deep into the island's spiritual heart — a world of mist-shrouded temples, emerald rice terraces, and ancient rituals performed at dawn.
 
 Our guide, Made (pronounced Mah-day), was a Balinese Hindu priest who opened doors — both literal and metaphorical — that most tourists never even see.
 
@@ -234,7 +234,7 @@ One of the most touching aspects of Balinese culture is the daily offering ritua
 
 ---
 
-*Experience the spiritual side of Bali with our **Sacred Island** journey. Contact BLAZE UNIVERSAL TOURS for details.*
+*Experience the spiritual side of Bali with our **Sacred Island** journey. Contact Odyssey Horizon for details.*
 `,
   },
   {
@@ -305,7 +305,7 @@ No journey through Morocco is complete without understanding the ritual of **min
 
 ---
 
-*Our **Imperial Cities & Sahara** itinerary covers 12 days across Morocco's highlights. Contact BLAZE UNIVERSAL TOURS today.*
+*Our **Imperial Cities & Sahara** itinerary covers 12 days across Morocco's highlights. Contact Odyssey Horizon today.*
 `,
   },
   {
@@ -376,7 +376,7 @@ Traveling in late June, we experienced the **midnight sun** — a phenomenon whe
 
 ---
 
-*Our **Fjords & Northern Lights** voyages depart from Bergen year-round. Connect with BLAZE UNIVERSAL TOURS for sailing dates.*
+*Our **Fjords & Northern Lights** voyages depart from Bergen year-round. Connect with Odyssey Horizon for sailing dates.*
 `,
   },
   {
@@ -450,7 +450,7 @@ A bullet train whisked us to **Hakone** in under an hour. From the cable car ove
 
 ---
 
-*Japan comes alive through our **Land of the Rising Sun** itinerary, running from March through November. Book with BLAZE UNIVERSAL TOURS.*
+*Japan comes alive through our **Land of the Rising Sun** itinerary, running from March through November. Book with Odyssey Horizon.*
 `,
   },
 ]

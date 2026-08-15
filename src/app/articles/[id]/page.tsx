@@ -17,7 +17,7 @@ export async function generateMetadata({
   const article = getArticle(parseInt(id))
   if (!article) return { title: "Article Not Found" }
   return {
-    title: `${article.title} | BLAZE UNIVERSAL TOURS Journal`,
+    title: `${article.title} | Odyssey Horizon Journal`,
     description: article.excerpt,
     openGraph: {
       title: article.title,
