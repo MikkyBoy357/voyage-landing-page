@@ -7,21 +7,21 @@ export default function TravelCategories() {
       description:
         "Explore scenic highways and hidden pathways across continents",
       image:
-        "https://firebasestorage.googleapis.com/v0/b/flash-chat-3a9a7.appspot.com/o/voyage%2Fsection3(1).png?alt=media&token=848532f7-4485-4117-bd0d-8c10aa6d5248",
+        "/images/category-road-trip.jpg",
     },
     {
       title: "Beach Trip",
       description:
         "Pristine shores, crystal waters, and coastal paradise awaits",
       image:
-        "https://firebasestorage.googleapis.com/v0/b/flash-chat-3a9a7.appspot.com/o/voyage%2Fsection3(2).png?alt=media&token=def19f3f-22dd-4a6d-be82-8402f6dec36e",
+        "/images/category-beach.jpg",
     },
     {
       title: "Off-Site Tours",
       description:
         "Discover hidden gems and authentic local adventures off the beaten path",
       image:
-        "https://firebasestorage.googleapis.com/v0/b/flash-chat-3a9a7.appspot.com/o/voyage%2Fsection3(3).png?alt=media&token=b0dc948f-c712-4854-a8e0-bfb7cf6f71c0",
+        "/images/category-offsite.jpg",
     },
   ]
 

@@ -123,7 +123,7 @@ export default function Home() {
         className="relative h-screen w-full snap-start overflow-hidden"
       >
         <Image
-          src="https://firebasestorage.googleapis.com/v0/b/flash-chat-3a9a7.appspot.com/o/voyage%2Fsection1(1).png?alt=media&token=9bb77c1d-11af-4e94-ae7a-6baf55c7edd0"
+          src="/images/hero.jpg"
           alt="Stunning travel destination"
           fill
           className="object-cover"
@@ -169,7 +169,7 @@ export default function Home() {
         {/* Decorative circles (subtle, premium) */}
         <div className="absolute top-1/4 right-[8%] w-48 h-48 md:w-72 md:h-72 rounded-full overflow-hidden border border-[#C8A960]/20 shadow-2xl hidden lg:block">
           <Image
-            src="https://firebasestorage.googleapis.com/v0/b/flash-chat-3a9a7.appspot.com/o/voyage%2Fsection1(2).png?alt=media&token=e7b7ad61-ad21-4bcf-a3f5-0e7f4fbaa9ab"
+            src="/images/highlight-1.jpg"
             alt="Travel highlight"
             fill
             className="object-cover"
@@ -178,7 +178,7 @@ export default function Home() {
         </div>
         <div className="absolute bottom-[15%] right-[18%] w-32 h-32 md:w-44 md:h-44 rounded-full overflow-hidden border border-[#C8A960]/20 shadow-2xl hidden lg:block">
           <Image
-            src="https://firebasestorage.googleapis.com/v0/b/flash-chat-3a9a7.appspot.com/o/voyage%2Fsection1(3).png?alt=media&token=9562b343-11be-4b59-b492-c152642d42f7"
+            src="/images/highlight-2.jpg"
             alt="Travel highlight"
             fill
             className="object-cover"
@@ -230,7 +230,7 @@ export default function Home() {
             <div className="relative h-[400px] md:h-[550px] order-2 lg:order-1">
               <div className="absolute left-[5%] top-[12%] w-[55%] h-[75%] rounded-lg overflow-hidden shadow-2xl">
                 <Image
-                  src="https://firebasestorage.googleapis.com/v0/b/flash-chat-3a9a7.appspot.com/o/voyage%2Fsection2(2).jpg?alt=media&token=16787e5e-f1d1-45b8-9984-978da9e91707"
+                  src="/images/about-1.jpg"
                   alt="Travel experience"
                   fill
                   className="object-cover"
@@ -239,7 +239,7 @@ export default function Home() {
               </div>
               <div className="absolute right-[5%] top-0 w-[55%] h-[75%] rounded-lg overflow-hidden shadow-2xl border border-[#C8A960]/10">
                 <Image
-                  src="https://firebasestorage.googleapis.com/v0/b/flash-chat-3a9a7.appspot.com/o/voyage%2Fsection2(3).jpg?alt=media&token=ff773596-e77c-4b75-8d0c-b5e925590270"
+                  src="/images/about-2.jpg"
                   alt="Travel destination"
                   fill
                   className="object-cover"
@@ -248,7 +248,7 @@ export default function Home() {
               </div>
               <div className="absolute left-[20%] bottom-0 w-[55%] h-[45%] rounded-lg overflow-hidden shadow-2xl border-2 border-[#C8A960]/20">
                 <Image
-                  src="https://firebasestorage.googleapis.com/v0/b/flash-chat-3a9a7.appspot.com/o/voyage%2Fsection2(4).jpg?alt=media&token=c6b1579a-f207-4e75-9b6c-17185da27ec8"
+                  src="/images/about-3.jpg"
                   alt="Adventure awaits"
                   fill
                   className="object-cover"
@@ -369,19 +369,19 @@ export default function Home() {
                 title: "A Week in Santorini",
                 category: "Beach",
                 image:
-                  "https://firebasestorage.googleapis.com/v0/b/flash-chat-3a9a7.appspot.com/o/voyage%2Fsection3(2).png?alt=media&token=def19f3f-22dd-4a6d-be82-8402f6dec36e",
+                  "/images/santorini-article.jpg",
               },
               {
                 title: "Safari Diaries: The Serengeti",
                 category: "Adventure",
                 image:
-                  "https://firebasestorage.googleapis.com/v0/b/flash-chat-3a9a7.appspot.com/o/voyage%2Fsection4(1).png?alt=media&token=4d9dc34b-6cc2-468d-82ea-b22f95282cf3",
+                  "/images/serengeti-article.jpg",
               },
               {
                 title: "The Hidden Temples of Bali",
                 category: "Culture",
                 image:
-                  "https://firebasestorage.googleapis.com/v0/b/flash-chat-3a9a7.appspot.com/o/voyage%2Fsection3(3).png?alt=media&token=b0dc948f-c712-4854-a8e0-bfb7cf6f71c0",
+                  "/images/bali-article.jpg",
               },
             ].map((article, i) => (
               <Link

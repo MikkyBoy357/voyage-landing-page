@@ -1,12 +1,8 @@
 import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
-  images: {
-    domains: [
-      "s3-alpha-sig.figma.com",
-      "firebasestorage.googleapis.com" // Add this line
-    ],
-  },
-};
+// All imagery is self-hosted under /public/images, so no remote image hosts are
+// allowed. Previously this listed Figma and Firebase Storage; the Firebase
+// bucket started returning 402 and took every image on the site down with it.
+const nextConfig: NextConfig = {};
 
 export default nextConfig;

@@ -18,15 +18,15 @@ export const articles: Article[] = [
     excerpt:
       "From the iconic blue domes of Oia to hidden beaches and local wineries, our Santorini tour revealed why this Cycladic island remains one of the world's most coveted destinations.",
     coverImage:
-      "https://firebasestorage.googleapis.com/v0/b/flash-chat-3a9a7.appspot.com/o/voyage%2Fsection3(2).png?alt=media&token=def19f3f-22dd-4a6d-be82-8402f6dec36e",
+      "/images/santorini-article.jpg",
     category: "Beach & Islands",
     date: "March 15, 2026",
     author: "Amara Johnson",
     readTime: "8 min read",
     journalImages: [
-      "https://firebasestorage.googleapis.com/v0/b/flash-chat-3a9a7.appspot.com/o/voyage%2Fsection1(2).png?alt=media&token=e7b7ad61-ad21-4bcf-a3f5-0e7f4fbaa9ab",
-      "https://firebasestorage.googleapis.com/v0/b/flash-chat-3a9a7.appspot.com/o/voyage%2Fsection1(3).png?alt=media&token=9562b343-11be-4b59-b492-c152642d42f7",
-      "https://firebasestorage.googleapis.com/v0/b/flash-chat-3a9a7.appspot.com/o/voyage%2Fsection2(2).jpg?alt=media&token=16787e5e-f1d1-45b8-9984-978da9e91707",
+      "/images/santorini-1.jpg",
+      "/images/santorini-2.jpg",
+      "/images/santorini-3.jpg",
     ],
     content: `
 ## The Magic of Oia at Sunset
@@ -36,7 +36,7 @@ There's a reason Santorini tops every travel bucket list. As our group gathered 
 The whitewashed buildings cascading down the caldera, punctuated by those iconic blue domes, created a scene so surreal it felt like stepping into a painting. Our guide, Nikos, shared stories of the island's volcanic origins while we sipped local Assyrtiko wine.
 
 <figure class="journal-photo">
-<img src="https://firebasestorage.googleapis.com/v0/b/flash-chat-3a9a7.appspot.com/o/voyage%2Fsection1(2).png?alt=media&token=e7b7ad61-ad21-4bcf-a3f5-0e7f4fbaa9ab" alt="The stunning Oia sunset viewed from the caldera cliffs" />
+<img src="/images/santorini-1.jpg" alt="The stunning Oia sunset viewed from the caldera cliffs" />
 <figcaption>Golden hour over Oia — the caldera painted in amber light</figcaption>
 </figure>
 
@@ -51,7 +51,7 @@ While most visitors flock to the famous **Red Beach** and **Kamari**, our BLAZE 
 > "The real Santorini isn't in the postcards. It's in the quiet moments between the cliffs and the sea." — Nikos, our local guide
 
 <figure class="journal-photo">
-<img src="https://firebasestorage.googleapis.com/v0/b/flash-chat-3a9a7.appspot.com/o/voyage%2Fsection1(3).png?alt=media&token=9562b343-11be-4b59-b492-c152642d42f7" alt="Hidden cove along the Santorini coast" />
+<img src="/images/santorini-2.jpg" alt="Hidden cove along the Santorini coast" />
 <figcaption>One of Santorini's hidden coves — accessible only by boat with BLAZE</figcaption>
 </figure>
 
@@ -71,7 +71,7 @@ Each evening, we dined at family-run tavernas perched on the caldera's edge, whe
 A boat trip to **Nea Kameni**, the still-active volcanic island at the center of the caldera, was a highlight. Walking across the black lava fields, feeling the heat rising from sulfur vents, and understanding the geological forces that created this paradise — it added a profound depth to the beauty we'd been admiring from afar.
 
 <figure class="journal-photo">
-<img src="https://firebasestorage.googleapis.com/v0/b/flash-chat-3a9a7.appspot.com/o/voyage%2Fsection2(2).jpg?alt=media&token=16787e5e-f1d1-45b8-9984-978da9e91707" alt="Walking across the volcanic landscape of Nea Kameni" />
+<img src="/images/santorini-3.jpg" alt="Walking across the volcanic landscape of Nea Kameni" />
 <figcaption>Walking the black lava fields of Nea Kameni — the still-active volcanic heart of Santorini</figcaption>
 </figure>
 
@@ -93,15 +93,15 @@ A boat trip to **Nea Kameni**, the still-active volcanic island at the center of
     excerpt:
       "Witnessing the Great Migration, sleeping under the African stars, and coming face-to-face with the Big Five — our Serengeti safari was the adventure of a lifetime.",
     coverImage:
-      "https://firebasestorage.googleapis.com/v0/b/flash-chat-3a9a7.appspot.com/o/voyage%2Fsection4(1).png?alt=media&token=4d9dc34b-6cc2-468d-82ea-b22f95282cf3",
+      "/images/serengeti-article.jpg",
     category: "Adventure",
     date: "February 28, 2026",
     author: "David Okonkwo",
     readTime: "10 min read",
     journalImages: [
-      "https://firebasestorage.googleapis.com/v0/b/flash-chat-3a9a7.appspot.com/o/voyage%2Fsection4.jpg?alt=media&token=ec0ba623-e3eb-404e-a95a-cf9e2782b10d",
-      "https://firebasestorage.googleapis.com/v0/b/flash-chat-3a9a7.appspot.com/o/voyage%2Fsection2(3).jpg?alt=media&token=ff773596-e77c-4b75-8d0c-b5e925590270",
-      "https://firebasestorage.googleapis.com/v0/b/flash-chat-3a9a7.appspot.com/o/voyage%2Fsection2(4).jpg?alt=media&token=c6b1579a-f207-4e75-9b6c-17185da27ec8",
+      "/images/serengeti-1.jpg",
+      "/images/serengeti-2.jpg",
+      "/images/serengeti-3.jpg",
     ],
     content: `
 ## Into the Endless Plains
@@ -111,7 +111,7 @@ The Serengeti's name comes from the Maasai word *siringet*, meaning "endless pla
 Our BLAZE expedition started in **Arusha**, where we met our guide, Joseph — a third-generation Maasai who grew up on the edge of the Serengeti and knew the land like the back of his hand.
 
 <figure class="journal-photo">
-<img src="https://firebasestorage.googleapis.com/v0/b/flash-chat-3a9a7.appspot.com/o/voyage%2Fsection4.jpg?alt=media&token=ec0ba623-e3eb-404e-a95a-cf9e2782b10d" alt="The vast Serengeti plains stretching to the horizon" />
+<img src="/images/serengeti-1.jpg" alt="The vast Serengeti plains stretching to the horizon" />
 <figcaption>First light over the Serengeti — the endless plains that steal your breath</figcaption>
 </figure>
 
@@ -127,7 +127,7 @@ We timed our visit to witness **the Great Migration**, one of nature's most extr
 > "The Serengeti doesn't perform for tourists. It simply continues the cycle it has followed for millennia. We are privileged witnesses." — Joseph, our guide
 
 <figure class="journal-photo">
-<img src="https://firebasestorage.googleapis.com/v0/b/flash-chat-3a9a7.appspot.com/o/voyage%2Fsection2(3).jpg?alt=media&token=ff773596-e77c-4b75-8d0c-b5e925590270" alt="Wildebeest crossing the Mara River during the Great Migration" />
+<img src="/images/serengeti-2.jpg" alt="Wildebeest crossing the Mara River during the Great Migration" />
 <figcaption>The Great Migration in motion — a river of life crossing the Serengeti</figcaption>
 </figure>
 
@@ -146,7 +146,7 @@ Over five extraordinary days, we encountered all of Africa's **Big Five**:
 Our luxury tented camp at **Serengeti Under Canvas** offered an experience that blurred the line between adventure and comfort. Each evening:
 
 <figure class="journal-photo">
-<img src="https://firebasestorage.googleapis.com/v0/b/flash-chat-3a9a7.appspot.com/o/voyage%2Fsection2(4).jpg?alt=media&token=c6b1579a-f207-4e75-9b6c-17185da27ec8" alt="Luxury tented camp under the African stars" />
+<img src="/images/serengeti-3.jpg" alt="Luxury tented camp under the African stars" />
 <figcaption>Our camp at dusk — where luxury meets the African wilderness</figcaption>
 </figure>
 
@@ -170,15 +170,15 @@ A visit to a **Maasai village** near the Ngorongoro Crater was deeply moving. Th
     excerpt:
       "Beyond the tourist beaches lies a Bali of ancient temples, sacred rice terraces, and profound spiritual traditions that have endured for centuries.",
     coverImage:
-      "https://firebasestorage.googleapis.com/v0/b/flash-chat-3a9a7.appspot.com/o/voyage%2Fsection3(3).png?alt=media&token=b0dc948f-c712-4854-a8e0-bfb7cf6f71c0",
+      "/images/bali-article.jpg",
     category: "Culture",
     date: "January 20, 2026",
     author: "Leila Chen",
     readTime: "7 min read",
     journalImages: [
-      "https://firebasestorage.googleapis.com/v0/b/flash-chat-3a9a7.appspot.com/o/voyage%2Fsection1(1).png?alt=media&token=9bb77c1d-11af-4e94-ae7a-6baf55c7edd0",
-      "https://firebasestorage.googleapis.com/v0/b/flash-chat-3a9a7.appspot.com/o/voyage%2Fsection1(4).png?alt=media&token=42401bd6-8ddd-4b09-92c8-52ac47bc731b",
-      "https://firebasestorage.googleapis.com/v0/b/flash-chat-3a9a7.appspot.com/o/voyage%2Fsection3(1).png?alt=media&token=848532f7-4485-4117-bd0d-8c10aa6d5248",
+      "/images/bali-1.jpg",
+      "/images/bali-2.jpg",
+      "/images/bali-3.jpg",
     ],
     content: `
 ## Beyond the Beach Resorts
@@ -195,7 +195,7 @@ Bali has over **20,000 temples**, but these four left the deepest impression:
 Rising through seven ascending temples on the slopes of **Mount Lempuyang**, each level revealed more stunning views. The iconic split gateway framing Mount Agung — Bali's holiest volcano — was a moment of genuine awe.
 
 <figure class="journal-photo">
-<img src="https://firebasestorage.googleapis.com/v0/b/flash-chat-3a9a7.appspot.com/o/voyage%2Fsection1(1).png?alt=media&token=9bb77c1d-11af-4e94-ae7a-6baf55c7edd0" alt="The Gates of Heaven at Pura Lempuyang framing Mount Agung" />
+<img src="/images/bali-1.jpg" alt="The Gates of Heaven at Pura Lempuyang framing Mount Agung" />
 <figcaption>The iconic Gates of Heaven at Pura Lempuyang — Mount Agung rising through the morning mist</figcaption>
 </figure>
 
@@ -213,7 +213,7 @@ Floating ethereally on **Lake Bratan** in the central highlands, this water temp
 The **Jatiluwih rice terraces**, a UNESCO World Heritage Site, showcase the *subak* system — a cooperative water management philosophy dating back to the 9th century:
 
 <figure class="journal-photo">
-<img src="https://firebasestorage.googleapis.com/v0/b/flash-chat-3a9a7.appspot.com/o/voyage%2Fsection1(4).png?alt=media&token=42401bd6-8ddd-4b09-92c8-52ac47bc731b" alt="The emerald Jatiluwih rice terraces cascading down hillsides" />
+<img src="/images/bali-2.jpg" alt="The emerald Jatiluwih rice terraces cascading down hillsides" />
 <figcaption>Jatiluwih's emerald terraces — a living tapestry carved over a thousand years</figcaption>
 </figure>
 
@@ -228,7 +228,7 @@ The **Jatiluwih rice terraces**, a UNESCO World Heritage Site, showcase the *sub
 One of the most touching aspects of Balinese culture is the daily offering ritual called **canang sari**. Every morning, women craft intricate palm-leaf baskets filled with flowers, rice, and incense, placing them at doorsteps, temples, and even car dashboards — a beautiful reminder of gratitude in everyday life.
 
 <figure class="journal-photo">
-<img src="https://firebasestorage.googleapis.com/v0/b/flash-chat-3a9a7.appspot.com/o/voyage%2Fsection3(1).png?alt=media&token=848532f7-4485-4117-bd0d-8c10aa6d5248" alt="Balinese women preparing canang sari morning offerings" />
+<img src="/images/bali-3.jpg" alt="Balinese women preparing canang sari morning offerings" />
 <figcaption>The delicate art of canang sari — offerings crafted with love each morning</figcaption>
 </figure>
 
@@ -243,14 +243,14 @@ One of the most touching aspects of Balinese culture is the daily offering ritua
     excerpt:
       "A sensory overload in the best possible way — from the souks of Marrakech to sleeping under the stars in the Sahara Desert, Morocco is a feast for every sense.",
     coverImage:
-      "https://firebasestorage.googleapis.com/v0/b/flash-chat-3a9a7.appspot.com/o/voyage%2Fsection3(1).png?alt=media&token=848532f7-4485-4117-bd0d-8c10aa6d5248",
+      "/images/morocco-article.jpg",
     category: "Road Trip",
     date: "December 5, 2025",
     author: "Omar Benali",
     readTime: "9 min read",
     journalImages: [
-      "https://firebasestorage.googleapis.com/v0/b/flash-chat-3a9a7.appspot.com/o/voyage%2Fsection4(2).jpg?alt=media&token=2315203a-4a6a-45b0-9548-ba6276dd25b6",
-      "https://firebasestorage.googleapis.com/v0/b/flash-chat-3a9a7.appspot.com/o/voyage%2Fsection4(3).jpg?alt=media&token=837336b3-2a23-44f3-92ef-cca22d2ae299",
+      "/images/morocco-1.jpg",
+      "/images/morocco-2.jpg",
     ],
     content: `
 ## The Labyrinth of Marrakech
@@ -264,7 +264,7 @@ Our base was a restored **19th-century riad** in the heart of the medina — a s
 The drive from Marrakech to the Sahara crosses the **High Atlas Mountains** via the Tizi n'Tichka pass at 2,260 meters:
 
 <figure class="journal-photo">
-<img src="https://firebasestorage.googleapis.com/v0/b/flash-chat-3a9a7.appspot.com/o/voyage%2Fsection4(2).jpg?alt=media&token=2315203a-4a6a-45b0-9548-ba6276dd25b6" alt="Winding mountain road through the High Atlas Mountains" />
+<img src="/images/morocco-1.jpg" alt="Winding mountain road through the High Atlas Mountains" />
 <figcaption>The winding ascent over the Atlas — each turn reveals another breathtaking vista</figcaption>
 </figure>
 
@@ -283,7 +283,7 @@ The climax of our journey was a **camel trek into the Erg Chebbi dunes** near Me
 5. The night sky, free from any light pollution, revealed a canopy of stars so dense it took our breath away
 
 <figure class="journal-photo">
-<img src="https://firebasestorage.googleapis.com/v0/b/flash-chat-3a9a7.appspot.com/o/voyage%2Fsection4(3).jpg?alt=media&token=837336b3-2a23-44f3-92ef-cca22d2ae299" alt="Starlit night over the luxury Sahara desert camp" />
+<img src="/images/morocco-2.jpg" alt="Starlit night over the luxury Sahara desert camp" />
 <figcaption>Our desert camp under the Sahara stars — a night we'll never forget</figcaption>
 </figure>
 
@@ -314,14 +314,14 @@ No journey through Morocco is complete without understanding the ritual of **min
     excerpt:
       "Sailing through the dramatic fjords of Norway, from thundering waterfalls to glacier-fed waters of impossible blue, was a humbling encounter with the raw power of nature.",
     coverImage:
-      "https://firebasestorage.googleapis.com/v0/b/flash-chat-3a9a7.appspot.com/o/voyage%2Fsection4(2).jpg?alt=media&token=2315203a-4a6a-45b0-9548-ba6276dd25b6",
+      "/images/norway-article.jpg",
     category: "Cruise",
     date: "November 10, 2025",
     author: "Erik Lindström",
     readTime: "7 min read",
     journalImages: [
-      "https://firebasestorage.googleapis.com/v0/b/flash-chat-3a9a7.appspot.com/o/voyage%2Fsection1(1).png?alt=media&token=9bb77c1d-11af-4e94-ae7a-6baf55c7edd0",
-      "https://firebasestorage.googleapis.com/v0/b/flash-chat-3a9a7.appspot.com/o/voyage%2Fsection3(2).png?alt=media&token=def19f3f-22dd-4a6d-be82-8402f6dec36e",
+      "/images/norway-1.jpg",
+      "/images/norway-2.jpg",
     ],
     content: `
 ## Entering the Fjordlands
@@ -331,7 +331,7 @@ As our expedition vessel turned into the **Sognefjord** — Norway's longest and
 This was nature on a scale that made us feel wonderfully insignificant.
 
 <figure class="journal-photo">
-<img src="https://firebasestorage.googleapis.com/v0/b/flash-chat-3a9a7.appspot.com/o/voyage%2Fsection1(1).png?alt=media&token=9bb77c1d-11af-4e94-ae7a-6baf55c7edd0" alt="Dramatic fjordland cliffs rising from emerald waters" />
+<img src="/images/norway-1.jpg" alt="Dramatic fjordland cliffs rising from emerald waters" />
 <figcaption>Entering the Sognefjord — sheer granite walls towering a thousand meters above the water</figcaption>
 </figure>
 
@@ -352,7 +352,7 @@ A zodiac excursion brought us face-to-face with the **Jostedalsbreen glacier** �
 > "The fjords are the autobiography of ice. Every cliff, every waterfall, every depth tells the story of glaciers past." — Dr. Ingrid Haugen, expedition geologist
 
 <figure class="journal-photo">
-<img src="https://firebasestorage.googleapis.com/v0/b/flash-chat-3a9a7.appspot.com/o/voyage%2Fsection3(2).png?alt=media&token=a4597b3c-ebf8-44ee-b82d-22acda18e23b" alt="Ancient blue glacier ice meeting the fjord waters" />
+<img src="/images/norway-3.jpg" alt="Ancient blue glacier ice meeting the fjord waters" />
 <figcaption>The electric blue of Nigardsbreen's ice face — millions of years of compressed snowfall</figcaption>
 </figure>
 
@@ -385,14 +385,14 @@ Traveling in late June, we experienced the **midnight sun** — a phenomenon whe
     excerpt:
       "Tokyo is a city of beautiful contradictions — ancient shrines beside neon skyscrapers, serene gardens steps from the busiest intersection on Earth. Our journey through Japan's capital was endlessly surprising.",
     coverImage:
-      "https://firebasestorage.googleapis.com/v0/b/flash-chat-3a9a7.appspot.com/o/voyage%2Fsection4(3).jpg?alt=media&token=837336b3-2a23-44f3-92ef-cca22d2ae299",
+      "/images/japan-article.jpg",
     category: "City & Culture",
     date: "October 18, 2025",
     author: "Yuki Tanaka",
     readTime: "8 min read",
     journalImages: [
-      "https://firebasestorage.googleapis.com/v0/b/flash-chat-3a9a7.appspot.com/o/voyage%2Fsection4.jpg?alt=media&token=837336b3-2a23-44f3-92ef-cca22d2ae299",
-      "https://firebasestorage.googleapis.com/v0/b/flash-chat-3a9a7.appspot.com/o/voyage%2Fsection3(3).png?alt=media&token=a4597b3c-ebf8-44ee-b82d-22acda18e23b",
+      "/images/japan-1.jpg",
+      "/images/japan-2.jpg",
     ],
     content: `
 ## First Impressions: Organized Chaos
@@ -415,7 +415,7 @@ Hidden within a 170-acre forest in the middle of the city, **Meiji Jingu** offer
 The moats and stone walls of the **Imperial Palace** — home of Japan's emperor — sit in remarkable contrast to the glass towers of Marunouchi just beyond.
 
 <figure class="journal-photo">
-<img src="https://firebasestorage.googleapis.com/v0/b/flash-chat-3a9a7.appspot.com/o/voyage%2Fsection4.jpg?alt=media&token=837336b3-2a23-44f3-92ef-cca22d2ae299" alt="Ancient Tokyo temple with traditional architecture" />
+<img src="/images/japan-1.jpg" alt="Ancient Tokyo temple with traditional architecture" />
 <figcaption>Morning light at Senso-ji — centuries of devotion lingering in the incense smoke</figcaption>
 </figure>
 
@@ -431,7 +431,7 @@ Tokyo's modern face is equally intoxicating:
 > "Tokyo doesn't choose between old and new. It layers them. Every street corner is a conversation between centuries." — Kenji, our cultural guide
 
 <figure class="journal-photo">
-<img src="https://firebasestorage.googleapis.com/v0/b/flash-chat-3a9a7.appspot.com/o/voyage%2Fsection3(3).png?alt=media&token=a4597b3c-ebf8-44ee-b82d-22acda18e23b" alt="Neon-lit Tokyo streets at night" />
+<img src="/images/japan-2.jpg" alt="Neon-lit Tokyo streets at night" />
 <figcaption>Golden Gai at midnight — 200 tiny bars hiding behind a maze of glowing lanterns</figcaption>
 </figure>
 

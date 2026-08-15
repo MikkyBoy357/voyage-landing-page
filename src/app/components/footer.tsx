@@ -41,6 +41,7 @@ export default function Footer() {
                 { label: "Tours", href: "#tours" },
                 { label: "Journal", href: "/articles" },
                 { label: "Contact", href: "#contact" },
+                { label: "Image Credits", href: "/credits" },
               ].map((link) => (
                 <li key={link.label}>
                   <Link
