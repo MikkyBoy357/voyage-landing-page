@@ -1,46 +1,90 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #ffffff;
-    --foreground: #171717;
-    --primary: #1e3a8a;
-    --secondary: #3b82f6;
-    --accent: #f59e0b;
-    --text: #1f2937;
-    --light-bg: #f8fafc;
-  }
-}
-
-@font-face {
-  font-family: 'poor';
-  src: url('/fonts/PoorStory-Regular.ttf') format('truetype');
-  font-display: swap;
+  --blaze-black: #0B0F19;
+  --blaze-dark: #111827;
+  --blaze-navy: #1A1F35;
+  --blaze-gold: #C8A960;
+  --blaze-gold-light: #E4D5A0;
+  --blaze-cream: #FAF6EE;
+  --blaze-white: #FEFDFB;
+  --blaze-gray: #6B7280;
+  --blaze-muted: #9CA3AF;
 }
 
 @layer utilities {
-  .font-rammeto-one {
-    font-family: var(--font-rammeto-one), cursive;
-  }
-  .font-poor-story {
-    font-family: var(--font-poor-story), cursive;
-  }
-  .font-grape-nuts {
-    font-family: var(--font-grape-nuts), cursive;
-  }
-  .font-princess-sofia {
-    font-family: var(--font-princess-sofia), cursive;
+  .font-playfair {
+    font-family: var(--font-playfair), serif;
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif, 'Poppins', 'PoorStory';
+  background: var(--blaze-black);
+  color: var(--blaze-cream);
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--blaze-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--blaze-gold);
+  border-radius: 3px;
+}
+
+/* Gold gradient text */
+.text-gradient-gold {
+  background: linear-gradient(135deg, #C8A960 0%, #E4D5A0 50%, #C8A960 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Parallax helper */
+.bg-fixed-safe {
+  background-attachment: fixed;
+}
+
+@supports (-webkit-touch-callout: none) {
+  .bg-fixed-safe {
+    background-attachment: scroll;
+  }
+}
+
+/* Journal-style inline photos in articles */
+.journal-photo {
+  margin: 2.5rem auto;
+  max-width: 100%;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(200, 169, 96, 0.15);
+}
+
+.journal-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  max-height: 500px;
+}
+
+.journal-photo figcaption {
+  padding: 0.75rem 1rem;
+  background: rgba(17, 24, 39, 0.8);
+  color: var(--blaze-gold-light);
+  font-style: italic;
+  font-size: 0.875rem;
+  text-align: center;
+  letter-spacing: 0.01em;
 }

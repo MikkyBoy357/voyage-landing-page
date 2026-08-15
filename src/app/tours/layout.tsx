@@ -3,23 +3,22 @@ import { ArrowLeft } from "lucide-react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Journal | BLAZE UNIVERSAL TOURS 🔱",
+  title: "Tours | BLAZE UNIVERSAL TOURS 🔱",
   description:
-    "Travel stories, tips, and experiences from BLAZE UNIVERSAL TOURS. Discover destinations and get inspired for your next journey.",
+    "Explore our upcoming bookable tours and plan your next extraordinary adventure with BLAZE UNIVERSAL TOURS.",
 }
 
-export default function ArticlesLayout({
+export default function ToursLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
   return (
     <div className="min-h-screen bg-[#0B0F19]">
-      {/* Header */}
       <header className="fixed top-0 w-full z-50 bg-[#0B0F19]/95 backdrop-blur-md border-b border-[#C8A960]/10">
         <div className="max-w-7xl mx-auto px-6 md:px-8 h-16 flex items-center justify-between">
           <Link
-            href="/"
+            href="/#tours"
             className="flex items-center gap-3 text-[#FAF6EE]/60 hover:text-[#C8A960] transition-colors text-sm"
           >
             <ArrowLeft size={16} />

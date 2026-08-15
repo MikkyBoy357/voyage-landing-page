@@ -1,69 +1,69 @@
 import Image from "next/image"
-import Link from "next/link"
 
 export default function TravelCategories() {
   const categories = [
     {
       title: "Road Trip",
-      description: "Explore scenic highways and hidden pathways",
-      image: "https://firebasestorage.googleapis.com/v0/b/flash-chat-3a9a7.appspot.com/o/voyage%2Fsection3(1).png?alt=media&token=848532f7-4485-4117-bd0d-8c10aa6d5248"
+      description:
+        "Explore scenic highways and hidden pathways across continents",
+      image:
+        "https://firebasestorage.googleapis.com/v0/b/flash-chat-3a9a7.appspot.com/o/voyage%2Fsection3(1).png?alt=media&token=848532f7-4485-4117-bd0d-8c10aa6d5248",
     },
     {
       title: "Beach Trip",
-      description: "Relax on pristine shores and coastal paradises",
-      image: "https://firebasestorage.googleapis.com/v0/b/flash-chat-3a9a7.appspot.com/o/voyage%2Fsection3(2).png?alt=media&token=def19f3f-22dd-4a6d-be82-8402f6dec36e",
+      description:
+        "Pristine shores, crystal waters, and coastal paradise awaits",
+      image:
+        "https://firebasestorage.googleapis.com/v0/b/flash-chat-3a9a7.appspot.com/o/voyage%2Fsection3(2).png?alt=media&token=def19f3f-22dd-4a6d-be82-8402f6dec36e",
     },
     {
       title: "Off-Site Tours",
-      description: "Discover hidden gems and local adventures",
-      image: "https://firebasestorage.googleapis.com/v0/b/flash-chat-3a9a7.appspot.com/o/voyage%2Fsection3(3).png?alt=media&token=b0dc948f-c712-4854-a8e0-bfb7cf6f71c0",
+      description:
+        "Discover hidden gems and authentic local adventures off the beaten path",
+      image:
+        "https://firebasestorage.googleapis.com/v0/b/flash-chat-3a9a7.appspot.com/o/voyage%2Fsection3(3).png?alt=media&token=b0dc948f-c712-4854-a8e0-bfb7cf6f71c0",
     },
-  ];
+  ]
 
   return (
-    <section className="py-12 md:py-24 px-4 md:px-6 bg-gradient-to-b from-white to-[#f2f9f4] min-h-screen flex items-center">
-      <div className="max-w-7xl mx-auto">
-        {/* Heading with decorative elements */}
-        <div className="relative mb-8 md:mb-10 text-center">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#0B5C1E] inline-block relative font-rammeto-one">
-            Travel Categories
-            <span className="absolute -left-6 md:-left-8 top-1/2 w-3 md:w-4 h-3 md:h-4 rounded-full bg-[#5fa6b7]" />
-            <span className="absolute -right-6 md:-right-8 top-1/2 w-3 md:w-4 h-3 md:h-4 rounded-full bg-[#5fa6b7]"></span>
-          </h1>
-          <div className="w-16 md:w-24 h-1 bg-[#0B5C1E] mx-auto mt-4 md:mt-6"></div>
+    <section className="py-16 md:py-24 px-6 bg-[#0B0F19] min-h-screen flex items-center relative overflow-hidden">
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-24 bg-gradient-to-b from-transparent to-[#C8A960]/20" />
+
+      <div className="max-w-7xl mx-auto w-full">
+        <div className="text-center mb-12 md:mb-16">
+          <span className="text-[#C8A960] text-xs tracking-[0.3em] uppercase">
+            Explore by Category
+          </span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mt-4 font-playfair">
+            Travel <span className="text-gradient-gold">Categories</span>
+          </h2>
+          <div className="w-16 h-0.5 bg-[#C8A960] mx-auto mt-6" />
         </div>
 
-        {/* Category Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {categories.map((category, index) => (
             <div
-              
               key={index}
-              className="block transform transition duration-500 hover:-translate-y-4 hover:shadow-2xl"
+              className="group relative overflow-hidden bg-[#111827] border border-[#C8A960]/10 hover:border-[#C8A960]/40 transition-all duration-500"
             >
-              <div className="bg-white rounded-2xl shadow-xl overflow-hidden h-full border border-gray-100">
-                {/* Image Container - Taller aspect ratio */}
-                <div className="aspect-[4/5] relative">
-                  <Image
-                    src={category.image || "/placeholder.svg"}
-                    alt={category.title}
-                    fill
-                    className="object-cover transition duration-700 hover:scale-110"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  />
-                  {/* Gradient overlay for better text readability */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+              <div className="aspect-[3/4] relative overflow-hidden">
+                <Image
+                  src={category.image}
+                  alt={category.title}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F19] via-[#0B0F19]/20 to-transparent" />
 
-                  {/* Category title positioned at bottom of image */}
-                  <div className="absolute bottom-0 left-0 w-full p-4 md:p-6 text-white z-10">
-                    <h3 className="text-2xl md:text-3xl font-bold">{category.title}</h3>
-                  </div>
-                </div>
-
-                {/* Description area */}
-                <div className="p-4 md:p-6">
-                  <p className="text-gray-600 text-base md:text-lg">{category.description}</p>
-
+                <div className="absolute bottom-0 left-0 w-full p-6 md:p-8">
+                  <div className="w-8 h-0.5 bg-[#C8A960] mb-4 group-hover:w-12 transition-all duration-500" />
+                  <h3 className="text-2xl md:text-3xl font-bold text-white font-playfair mb-2">
+                    {category.title}
+                  </h3>
+                  <p className="text-[#FAF6EE]/50 text-sm">
+                    {category.description}
+                  </p>
                 </div>
               </div>
             </div>
@@ -71,5 +71,5 @@ export default function TravelCategories() {
         </div>
       </div>
     </section>
-  );
+  )
 }

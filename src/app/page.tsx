@@ -1,10 +1,19 @@
 "use client"
+
 import Image from "next/image"
 import Link from "next/link"
 import TravelCategories from "./components/travel-categories"
 import PopularTours from "./components/popular-tours"
 import Footer from "./components/footer"
 import { useState, useEffect } from "react"
+import { MapPin, Calendar, Users, ArrowRight, Menu, X } from "lucide-react"
+
+const navLinks = [
+  { label: "Home", href: "#hero" },
+  { label: "About", href: "#about" },
+  { label: "Categories", href: "#categories" },
+  { label: "Tours", href: "#tours" },
+]
 
 export default function Home() {
   const [isHeroVisible, setIsHeroVisible] = useState(true)
@@ -13,294 +22,410 @@ export default function Home() {
   useEffect(() => {
     const heroSection = document.getElementById("hero")
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsHeroVisible(entry.isIntersecting)
-      },
-      {
-        threshold: 0.5, // Trigger when 50% of hero is visible
-        rootMargin: "-50px 0px 0px 0px", // Adjust this offset as needed
-      },
+      ([entry]) => setIsHeroVisible(entry.isIntersecting),
+      { threshold: 0.5, rootMargin: "-50px 0px 0px 0px" }
     )
-
-    if (heroSection) {
-      observer.observe(heroSection)
-    }
-
+    if (heroSection) observer.observe(heroSection)
     return () => {
-      if (heroSection) {
-        observer.unobserve(heroSection)
-      }
+      if (heroSection) observer.unobserve(heroSection)
     }
   }, [])
 
   return (
     <div className="h-screen overflow-y-auto snap-y snap-mandatory scroll-smooth">
-      {/* Navigation - simplified logic */}
+      {/* Navigation */}
       <nav
-        className={`fixed top-0 left-0 w-full ${isHeroVisible ? "bg-transparent" : "bg-[#84B8C3]"} text-white py-4 px-2 z-50 transition-colors duration-300`}
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
+          isHeroVisible
+            ? "bg-transparent"
+            : "bg-[#0B0F19]/95 backdrop-blur-md border-b border-[#C8A960]/20"
+        }`}
       >
-        <div className="mx-4 md:mx-10 flex justify-between items-center">
-          <Link href="#hero" className="py-2">
-            <img src="voyage-white.svg" alt="logo" className="h-8 md:h-12" />
+        <div className="max-w-7xl mx-auto px-4 md:px-8 flex justify-between items-center h-16 md:h-20">
+          <Link href="#hero" className="flex items-center gap-2">
+            <span className="text-[#C8A960] text-xl md:text-2xl font-bold tracking-wider font-playfair">
+              BLAZE<span className="text-white">TOURS</span> 🔱
+            </span>
           </Link>
-          <div className="hidden md:flex space-x-4 lg:space-x-8 text-base lg:text-lg text-white">
-            <Link href="#hero" className="transition hover:text-[#5fa6b7] py-2 text-gray-700">
-              Home
-            </Link>
-            <Link href="#about" className="transition hover:text-[#5fa6b7] py-2 text-gray-700">
-              About Us
-            </Link>
-            <Link href="#categories" className="transition hover:text-[#5fa6b7] py-2 text-gray-700">
-              Categories
-            </Link>
-            <Link href="#tours" className="transition hover:text-[#5fa6b7] py-2 text-gray-700">
-              Tours
-            </Link>
-            <Link href="#contact" className="transition hover:text-[#5fa6b7] py-2 text-gray-700">
-              Contact Us
-            </Link>
-          </div>
-          <button
-            className="md:hidden p-2 transition-transform duration-300 ease-in-out"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            style={{ transform: mobileMenuOpen ? "rotate(90deg)" : "rotate(0)" }}
-          >
-            ☰
-          </button>
-        </div>
-        {/* Mobile Menu */}
-        <div
-          className={`md:hidden absolute top-full left-0 w-full bg-[#84B8C3] text-white py-4 px-6 z-50 shadow-lg transition-all duration-300 ease-in-out ${mobileMenuOpen
-            ? "max-h-[300px] opacity-100 translate-y-0"
-            : "max-h-0 opacity-0 -translate-y-2 overflow-hidden py-0"
-            }`}
-        >
-          <div className="flex flex-col space-y-4">
+
+          <div className="hidden md:flex items-center gap-8">
+            {navLinks.map((item) => (
+              <Link
+                key={item.label}
+                href={item.href}
+                className="text-sm tracking-widest uppercase text-[#FAF6EE]/80 hover:text-[#C8A960] transition-colors duration-300"
+              >
+                {item.label}
+              </Link>
+            ))}
             <Link
-              href="#hero"
-              className="transition hover:text-[#5fa6b7] py-2 transform hover:translate-x-2 duration-200"
-              onClick={() => setMobileMenuOpen(false)}
+              href="/articles"
+              className="text-sm tracking-widest uppercase text-[#FAF6EE]/80 hover:text-[#C8A960] transition-colors duration-300"
             >
-              Home
-            </Link>
-            <Link
-              href="#about"
-              className="transition hover:text-[#5fa6b7] py-2 transform hover:translate-x-2 duration-200"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              About Us
-            </Link>
-            <Link
-              href="#categories"
-              className="transition hover:text-[#5fa6b7] py-2 transform hover:translate-x-2 duration-200"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Categories
-            </Link>
-            <Link
-              href="#tours"
-              className="transition hover:text-[#5fa6b7] py-2 transform hover:translate-x-2 duration-200"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Tours
+              Journal
             </Link>
             <Link
               href="#contact"
-              className="transition hover:text-[#5fa6b7] py-2 transform hover:translate-x-2 duration-200"
+              className="px-5 py-2 border border-[#C8A960] text-[#C8A960] text-sm tracking-widest uppercase hover:bg-[#C8A960] hover:text-[#0B0F19] transition-all duration-300"
+            >
+              Contact
+            </Link>
+          </div>
+
+          <button
+            className="md:hidden text-[#FAF6EE] p-2"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
+
+        {/* Mobile Menu */}
+        <div
+          className={`md:hidden absolute top-full left-0 w-full bg-[#0B0F19]/98 backdrop-blur-md border-b border-[#C8A960]/20 transition-all duration-300 ${
+            mobileMenuOpen
+              ? "max-h-[400px] opacity-100"
+              : "max-h-0 opacity-0 overflow-hidden"
+          }`}
+        >
+          <div className="flex flex-col px-6 py-4 gap-4">
+            {navLinks.map((item) => (
+              <Link
+                key={item.label}
+                href={item.href}
+                className="text-sm tracking-widest uppercase text-[#FAF6EE]/80 hover:text-[#C8A960] transition-colors py-2 border-b border-white/5"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {item.label}
+              </Link>
+            ))}
+            <Link
+              href="/articles"
+              className="text-sm tracking-widest uppercase text-[#FAF6EE]/80 hover:text-[#C8A960] transition-colors py-2 border-b border-white/5"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Contact Us
+              Journal
+            </Link>
+            <Link
+              href="#contact"
+              className="text-sm tracking-widest uppercase text-[#C8A960] py-2"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Contact
             </Link>
           </div>
         </div>
       </nav>
 
-      {/* Hero Section with text overlaid on image - adjusted for shorter navbar */}
+      {/* ═══════════════ HERO ═══════════════ */}
       <section
         id="hero"
-        className="relative h-screen w-full flex flex-col md:flex-row items-center mt-[50px] snap-start overflow-hidden"
+        className="relative h-screen w-full snap-start overflow-hidden"
       >
-        {/* Image - Full width on mobile, 45% on desktop */}
-        <div className="w-full md:w-[45%] h-[40vh] md:h-full relative order-1">
-          <Image
-            src="https://firebasestorage.googleapis.com/v0/b/flash-chat-3a9a7.appspot.com/o/voyage%2Fsection1(1).png?alt=media&token=9bb77c1d-11af-4e94-ae7a-6baf55c7edd0"
-            alt="Travel destination background"
-            fill
-            className="object-cover"
-            priority
-            sizes="(max-width: 768px) 100vw, 45vw"
-          />
-          {/* Gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b md:bg-gradient-to-r from-transparent to-[#5fa6b7]/20"></div>
+        <Image
+          src="https://firebasestorage.googleapis.com/v0/b/flash-chat-3a9a7.appspot.com/o/voyage%2Fsection1(1).png?alt=media&token=9bb77c1d-11af-4e94-ae7a-6baf55c7edd0"
+          alt="Stunning travel destination"
+          fill
+          className="object-cover"
+          priority
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0B0F19]/90 via-[#0B0F19]/60 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F19]/80 via-transparent to-[#0B0F19]/30" />
+
+        <div className="relative z-10 h-full flex flex-col justify-center px-6 md:px-16 lg:px-24 max-w-4xl">
+          <span className="text-[#C8A960] text-xs md:text-sm tracking-[0.3em] uppercase font-light mb-4">
+            Premium Travel Experiences
+          </span>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white leading-[1.1] font-playfair mb-6">
+            Explore The
+            <br />
+            <span className="text-gradient-gold">Extraordinary</span>
+          </h1>
+          <p className="text-[#FAF6EE]/70 text-base md:text-lg lg:text-xl max-w-lg mb-8 font-light leading-relaxed">
+            We craft journeys that transcend the ordinary. From hidden paradises
+            to iconic landmarks, every tour is a masterpiece.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <Link
+              href="#categories"
+              className="group inline-flex items-center justify-center gap-3 bg-[#C8A960] text-[#0B0F19] px-8 py-4 text-sm tracking-widest uppercase font-semibold hover:bg-[#E4D5A0] transition-all duration-300"
+            >
+              Discover Tours
+              <ArrowRight
+                size={16}
+                className="group-hover:translate-x-1 transition-transform"
+              />
+            </Link>
+            <Link
+              href="#about"
+              className="inline-flex items-center justify-center gap-3 border border-white/30 text-white px-8 py-4 text-sm tracking-widest uppercase font-light hover:border-[#C8A960] hover:text-[#C8A960] transition-all duration-300"
+            >
+              Our Story
+            </Link>
+          </div>
         </div>
 
-        {/* Text and circles container */}
-        <div className="w-full md:w-[55%] flex-1 md:h-full relative flex items-center justify-center md:justify-start order-2 py-8 md:py-0">
-          {/* Text Content - Centered on mobile, left-aligned on desktop */}
-          <div className="relative z-10 px-6 md:px-10 max-w-xl text-center md:text-left">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 font-poor-story text-[#05415E]">
-              Make Your Travel
-              <br />
-              Dreams Reality
-            </h1>
-            <p className="text-base sm:text-2xl md:text-3xl text-[#7E3F2B] mt-4 font-poor-story">
-              We bring everywhere alive with tours that cover and look beyond.
-            </p>
-          </div>
-
-          {/* Decorative circles - Repositioned as requested */}
-          {/* Circle 1 (biggest) - Middle right, half disappearing outside screen */}
-          <div className="absolute top-1/2 -right-[100px] sm:-right-[120px] md:-right-[80px] transform -translate-y-1/2 w-[180px] h-[180px] sm:w-[240px] sm:h-[240px] md:w-[200px] md:h-[200px] lg:w-[240px] lg:h-[240px] rounded-full overflow-hidden border-2 sm:border-3 md:border-4 border-white shadow-sm z-0">
-            <Image
-              src="https://firebasestorage.googleapis.com/v0/b/flash-chat-3a9a7.appspot.com/o/voyage%2Fsection1(2).png?alt=media&token=e7b7ad61-ad21-4bcf-a3f5-0e7f4fbaa9ab"
-              alt="Decorative travel image 1"
-              fill
-              className="object-cover"
-            />
-          </div>
-
-          {/* Circle 2 (second biggest) - Bottom right corner */}
-          <div className="absolute bottom-[5%] right-[5%] sm:bottom-[5%] sm:right-[5%] md:bottom-[5%] md:right-[5%] w-[120px] h-[120px] sm:w-[150px] sm:h-[150px] md:w-[130px] md:h-[130px] lg:w-[170px] lg:h-[170px] rounded-full overflow-hidden border-2 sm:border-3 md:border-4 border-white shadow-sm z-0">
-            <Image
-              src="https://firebasestorage.googleapis.com/v0/b/flash-chat-3a9a7.appspot.com/o/voyage%2Fsection1(3).png?alt=media&token=9562b343-11be-4b59-b492-c152642d42f7"
-              alt="Decorative travel image 2"
-              fill
-              className="object-cover"
-            />
-          </div>
-
-          {/* Circle 3 (smallest) - Bottom left */}
-          <div className="absolute bottom-[7%] left-[20%] sm:bottom-[7%] sm:left-[20%] md:bottom-[7%] md:left-[20%] w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] md:w-[90px] md:h-[90px] lg:w-[120px] lg:h-[120px] rounded-full overflow-hidden border-2 sm:border-3 md:border-4 border-white shadow-sm z-0">
-            <Image
-              src="https://firebasestorage.googleapis.com/v0/b/flash-chat-3a9a7.appspot.com/o/voyage%2Fsection1(4).png?alt=media&token=42401bd6-8ddd-4b09-92c8-52ac47bc731b"
-              alt="Decorative travel image 3"
-              fill
-              className="object-cover"
-            />
-          </div>
+        {/* Decorative circles (subtle, premium) */}
+        <div className="absolute top-1/4 right-[8%] w-48 h-48 md:w-72 md:h-72 rounded-full overflow-hidden border border-[#C8A960]/20 shadow-2xl hidden lg:block">
+          <Image
+            src="https://firebasestorage.googleapis.com/v0/b/flash-chat-3a9a7.appspot.com/o/voyage%2Fsection1(2).png?alt=media&token=e7b7ad61-ad21-4bcf-a3f5-0e7f4fbaa9ab"
+            alt="Travel highlight"
+            fill
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-[#0B0F19]/30" />
+        </div>
+        <div className="absolute bottom-[15%] right-[18%] w-32 h-32 md:w-44 md:h-44 rounded-full overflow-hidden border border-[#C8A960]/20 shadow-2xl hidden lg:block">
+          <Image
+            src="https://firebasestorage.googleapis.com/v0/b/flash-chat-3a9a7.appspot.com/o/voyage%2Fsection1(3).png?alt=media&token=9562b343-11be-4b59-b492-c152642d42f7"
+            alt="Travel highlight"
+            fill
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-[#0B0F19]/30" />
         </div>
 
         {/* Scroll indicator */}
-        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <svg
-            className="w-8 h-8 md:w-10 md:h-10 text-[#5fa6b7]"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-          </svg>
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
+          <span className="text-[#C8A960] text-[10px] tracking-[0.3em] uppercase">
+            Scroll
+          </span>
+          <div className="w-px h-8 bg-gradient-to-b from-[#C8A960] to-transparent" />
         </div>
       </section>
 
-      <section id="about" className="relative overflow-hidden py-16 min-h-screen snap-start flex items-center">
-        <div className="absolute bottom-[-150px] left-[-150px] w-[200px] md:w-[300px] h-[200px] md:h-[300px] z-0">
-          <div className="absolute w-full h-full border-[20px] md:border-[30px] border-[#0B5C1E] rounded-full"></div>
-          <div className="absolute w-[66%] h-[66%] border-[15px] md:border-[20px] border-[#B2D6D9] rounded-full ml-[17%] mt-[17%]"></div>
-          <div className="absolute w-[33%] h-[33%] border-[8px] md:border-[10px] border-white rounded-full ml-[33%] mt-[33%]"></div>
+      {/* ═══════════════ STATS BAR ═══════════════ */}
+      <div className="snap-start bg-[#111827] border-y border-[#C8A960]/10">
+        <div className="max-w-7xl mx-auto px-6 py-8 md:py-12 grid grid-cols-2 md:grid-cols-4 gap-8">
+          {[
+            { number: "150+", label: "Destinations" },
+            { number: "10K+", label: "Happy Travelers" },
+            { number: "15+", label: "Years Experience" },
+            { number: "98%", label: "Satisfaction Rate" },
+          ].map((stat, i) => (
+            <div key={i} className="text-center">
+              <div className="text-3xl md:text-4xl font-bold text-[#C8A960] font-playfair">
+                {stat.number}
+              </div>
+              <div className="text-xs md:text-sm tracking-widest uppercase text-[#FAF6EE]/50 mt-2">
+                {stat.label}
+              </div>
+            </div>
+          ))}
         </div>
+      </div>
 
-        <div className="flex flex-wrap relative px-4 md:left-20 md:top-20 max-w-7xl mx-auto">
-          {/* Text Content */}
-          <div className="w-full md:w-1/2 lg:pr-12 mb-8 md:mb-0">
-            <h1 className="text-[#0B5C1E] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 md:mb-8 font-rammeto-one">
-              About Us
-            </h1>
-            <p className="text-gray-600 text-base sm:text-lg md:text-xl leading-relaxed font-poppins">
-              Voyage is your go-to guide for unforgettable travel experiences, offering tips, recommendations, and
-              insights on top destinations, local cuisine, and hidden gems. Start your adventure with us today!
-            </p>
-          </div>
+      {/* ═══════════════ ABOUT ═══════════════ */}
+      <section
+        id="about"
+        className="snap-start min-h-screen flex items-center bg-[#0B0F19] relative overflow-hidden py-16 md:py-24"
+      >
+        <div className="absolute top-0 right-0 w-96 h-96 bg-[#C8A960]/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#C8A960]/5 rounded-full blur-3xl" />
 
-          {/* Stacked Images Container - Responsive */}
-          <div className="w-full md:w-1/2 relative h-[300px] sm:h-[400px] md:h-[550px] md:left-50 md:top-20">
-            {/* Third image (bottom) */}
-            <div className="absolute right-[40%] top-[20%] w-[60%] h-full overflow-hidden bg-black z-10 rounded-[20px] md:rounded-[40px] rounded-r-none">
-              <div className="w-full h-full overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            {/* Images */}
+            <div className="relative h-[400px] md:h-[550px] order-2 lg:order-1">
+              <div className="absolute left-[5%] top-[12%] w-[55%] h-[75%] rounded-lg overflow-hidden shadow-2xl">
                 <Image
                   src="https://firebasestorage.googleapis.com/v0/b/flash-chat-3a9a7.appspot.com/o/voyage%2Fsection2(2).jpg?alt=media&token=16787e5e-f1d1-45b8-9984-978da9e91707"
-                  alt="Travel destination 1"
+                  alt="Travel experience"
                   fill
                   className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 30vw"
+                  sizes="(max-width: 768px) 60vw, 30vw"
                 />
               </div>
-            </div>
-
-            {/* Second image (middle) */}
-            <div className="absolute right-[20%] top-[10%] w-[60%] h-full overflow-hidden bg-blue-800 z-20 rounded-[20px] md:rounded-[40px] rounded-r-none">
-              <div className="w-full h-full overflow-hidden">
+              <div className="absolute right-[5%] top-0 w-[55%] h-[75%] rounded-lg overflow-hidden shadow-2xl border border-[#C8A960]/10">
                 <Image
                   src="https://firebasestorage.googleapis.com/v0/b/flash-chat-3a9a7.appspot.com/o/voyage%2Fsection2(3).jpg?alt=media&token=ff773596-e77c-4b75-8d0c-b5e925590270"
-                  alt="Travel destination 2"
+                  alt="Travel destination"
                   fill
                   className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 30vw"
+                  sizes="(max-width: 768px) 60vw, 30vw"
                 />
               </div>
-            </div>
-
-            <div className="absolute right-0 top-0 w-[60%] h-full overflow-hidden bg-purple-600 z-30 rounded-[20px] md:rounded-[40px] rounded-r-none">
-              <div className="w-full h-full overflow-hidden">
+              <div className="absolute left-[20%] bottom-0 w-[55%] h-[45%] rounded-lg overflow-hidden shadow-2xl border-2 border-[#C8A960]/20">
                 <Image
                   src="https://firebasestorage.googleapis.com/v0/b/flash-chat-3a9a7.appspot.com/o/voyage%2Fsection2(4).jpg?alt=media&token=c6b1579a-f207-4e75-9b6c-17185da27ec8"
-                  alt="Travel destination 3"
+                  alt="Adventure awaits"
                   fill
                   className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 30vw"
+                  sizes="(max-width: 768px) 60vw, 30vw"
                   priority
                 />
               </div>
             </div>
-          </div>
-        </div>
-      </section>
 
-      <section id="dream" className="snap-start  flex flex-col justify-center h-screen">
-        {/* Make your travel */}
-        <div>
-          <div className="bg-[#fef3ea]">
-            <div className="flex flex-col mx-4 md:mx-15 md:flex-row items-center justify-center py-8 md:py-10 text-center md:text-left">
-              <span className="text-xl sm:text-2xl md:text-4xl font-medium text-[#11435c] font-poor-story">
-                Make Your Travel <br />
-                Dreams Reality
+            {/* Text */}
+            <div className="order-1 lg:order-2">
+              <span className="text-[#C8A960] text-xs tracking-[0.3em] uppercase">
+                Our Story
               </span>
-              <div
-                className="mx-10 md:mx-20 h-6 md:h-22 w-px my-4 md:my-0"
-                style={{
-                  backgroundImage: "linear-gradient(to bottom, gray 50%, rgba(255, 255, 255, 0) 50%)",
-                  backgroundSize: "1px 10px",
-                }}
-              ></div>
-              <span className="text-lg sm:text-xl md:text-2xl font-medium text-[#7E3F2B] font-princess-sofia">
-                We bring everywhere alive <br />
-                with tours that cover and <br />
-                look beyond.
-              </span>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mt-4 mb-6 font-playfair leading-tight">
+                Crafting Journeys
+                <br />
+                <span className="text-gradient-gold">Since 2010</span>
+              </h2>
+              <div className="w-16 h-0.5 bg-[#C8A960] mb-8" />
+              <p className="text-[#FAF6EE]/60 text-base md:text-lg leading-relaxed mb-6">
+                BLAZE UNIVERSAL TOURS was born from a passion for exploration and
+                a belief that travel should be transformative. We don&apos;t just
+                plan trips — we architect experiences that leave lasting
+                impressions.
+              </p>
+              <p className="text-[#FAF6EE]/60 text-base md:text-lg leading-relaxed mb-8">
+                From the sun-kissed coasts of the Mediterranean to the untamed
+                wilderness of Africa, our curated tours offer exclusive access,
+                expert guides, and moments that become lifelong memories.
+              </p>
+              <div className="grid grid-cols-3 gap-6">
+                {[
+                  { icon: MapPin, label: "Global Reach" },
+                  { icon: Calendar, label: "Year-Round" },
+                  { icon: Users, label: "Expert Guides" },
+                ].map(({ icon: Icon, label }, i) => (
+                  <div
+                    key={i}
+                    className="flex flex-col items-center text-center gap-2"
+                  >
+                    <div className="w-12 h-12 rounded-full border border-[#C8A960]/30 flex items-center justify-center">
+                      <Icon size={20} className="text-[#C8A960]" />
+                    </div>
+                    <span className="text-xs tracking-wider uppercase text-[#FAF6EE]/50">
+                      {label}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
-          <div
-            className="w-full"
-            style={{
-              height: "50vh",
-              backgroundImage:
-                "url('https://firebasestorage.googleapis.com/v0/b/flash-chat-3a9a7.appspot.com/o/voyage%2Fsection2(1).png?alt=media&token=0e147700-fbbc-4201-9484-c08227925dd1')",
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-            }}
-          ></div>
         </div>
       </section>
 
+      {/* ═══════════════ DREAM BANNER ═══════════════ */}
+      <section id="dream" className="snap-start relative">
+        <div className="bg-[#111827] border-y border-[#C8A960]/10">
+          <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-center py-12 md:py-16 px-6 text-center md:text-left gap-8 md:gap-16">
+            <div>
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white font-playfair">
+                Make Your Travel
+                <br />
+                Dreams <span className="text-gradient-gold">Reality</span>
+              </h3>
+            </div>
+            <div className="hidden md:block w-px h-20 bg-[#C8A960]/30" />
+            <div>
+              <p className="text-[#FAF6EE]/50 text-lg md:text-xl font-light italic">
+                &ldquo;We bring everywhere alive
+                <br />
+                with tours that cover and
+                <br />
+                look beyond.&rdquo;
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          className="w-full h-[50vh] relative bg-fixed-safe"
+          style={{
+            backgroundImage: "url('/boats.png')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F19] via-transparent to-[#0B0F19]/50" />
+        </div>
+      </section>
+
+      {/* ═══════════════ CATEGORIES ═══════════════ */}
       <section id="categories" className="snap-start">
         <TravelCategories />
       </section>
 
+      {/* ═══════════════ TOURS ═══════════════ */}
       <section id="tours" className="snap-start">
         <PopularTours />
       </section>
 
+      {/* ═══════════════ JOURNAL PREVIEW ═══════════════ */}
+      <section className="snap-start bg-[#0B0F19] py-16 md:py-24 relative overflow-hidden">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-24 bg-gradient-to-b from-transparent to-[#C8A960]/30" />
+        <div className="max-w-7xl mx-auto px-6 md:px-8">
+          <div className="text-center mb-12">
+            <span className="text-[#C8A960] text-xs tracking-[0.3em] uppercase">
+              From Our Journal
+            </span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mt-4 font-playfair">
+              Travel <span className="text-gradient-gold">Stories</span>
+            </h2>
+            <div className="w-16 h-0.5 bg-[#C8A960] mx-auto mt-6" />
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                title: "A Week in Santorini",
+                category: "Beach",
+                image:
+                  "https://firebasestorage.googleapis.com/v0/b/flash-chat-3a9a7.appspot.com/o/voyage%2Fsection3(2).png?alt=media&token=def19f3f-22dd-4a6d-be82-8402f6dec36e",
+              },
+              {
+                title: "Safari Diaries: The Serengeti",
+                category: "Adventure",
+                image:
+                  "https://firebasestorage.googleapis.com/v0/b/flash-chat-3a9a7.appspot.com/o/voyage%2Fsection4(1).png?alt=media&token=4d9dc34b-6cc2-468d-82ea-b22f95282cf3",
+              },
+              {
+                title: "The Hidden Temples of Bali",
+                category: "Culture",
+                image:
+                  "https://firebasestorage.googleapis.com/v0/b/flash-chat-3a9a7.appspot.com/o/voyage%2Fsection3(3).png?alt=media&token=b0dc948f-c712-4854-a8e0-bfb7cf6f71c0",
+              },
+            ].map((article, i) => (
+              <Link
+                key={i}
+                href={`/articles/${i + 1}`}
+                className="group block bg-[#111827] border border-[#C8A960]/10 overflow-hidden hover:border-[#C8A960]/30 transition-all duration-500"
+              >
+                <div className="aspect-[16/10] relative overflow-hidden">
+                  <Image
+                    src={article.image}
+                    alt={article.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-700"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#111827] to-transparent" />
+                  <span className="absolute top-4 left-4 text-[10px] tracking-widest uppercase text-[#C8A960] bg-[#0B0F19]/80 px-3 py-1">
+                    {article.category}
+                  </span>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-lg font-semibold text-white group-hover:text-[#C8A960] transition-colors font-playfair">
+                    {article.title}
+                  </h3>
+                  <span className="inline-flex items-center gap-2 text-[#C8A960] text-xs tracking-wider uppercase mt-4 group-hover:gap-3 transition-all">
+                    Read Story <ArrowRight size={12} />
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <Link
+              href="/articles"
+              className="inline-flex items-center gap-3 border border-[#C8A960] text-[#C8A960] px-8 py-3 text-sm tracking-widest uppercase hover:bg-[#C8A960] hover:text-[#0B0F19] transition-all duration-300"
+            >
+              View All Stories <ArrowRight size={14} />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════ FOOTER ═══════════════ */}
       <section id="contact" className="snap-start">
         <Footer />
       </section>

@@ -8,15 +8,12 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-poppins)', 'sans-serif'], // Default font
-        'rammeto-one': ['var(--font-rammeto-one)', 'cursive'],
-        'poor-story': ['var(--font-poor-story)', 'cursive'],
-        'grape-nuts': ['var(--font-grape-nuts)', 'cursive'],
-        'princess-sofia': ['var(--font-princess-sofia)', 'cursive'],
+        sans: ['var(--font-poppins)', 'sans-serif'],
+        playfair: ['var(--font-playfair)', 'serif'],
       },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 };
 
 export default config;
