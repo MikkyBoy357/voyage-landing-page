@@ -8,7 +8,7 @@ change ACTIVE_MARK there, change MARK below to match and re-run:
 """
 from PIL import Image, ImageDraw
 
-MARK = "compass"  # compass | horizonRing | monogram | openHorizon | sextant
+MARK = "horizonRing"  # compass | horizonRing | monogram | openHorizon | sextant
 
 GOLD = (200, 169, 96, 255)
 NAVY = (11, 15, 25, 255)

@@ -167,23 +167,38 @@ export default function Home() {
         </div>
 
         {/* Decorative circles (subtle, premium) */}
-        <div className="absolute top-1/4 right-[8%] w-48 h-48 md:w-72 md:h-72 rounded-full overflow-hidden border border-[#C8A960]/20 shadow-2xl hidden lg:block">
-          <Image
-            src="/images/highlight-1.jpg"
-            alt="Travel highlight"
-            fill
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-[#0B0F19]/30" />
+        <div
+          className="hero-orb absolute top-1/4 right-[8%] w-48 h-48 md:w-72 md:h-72 hidden lg:block"
+          style={{ animationDelay: "0.45s" }}
+        >
+          <div className="hero-orb-inner relative w-full h-full rounded-full overflow-hidden border border-[#C8A960]/20 shadow-2xl">
+            <Image
+              src="/images/highlight-1.jpg"
+              alt="Golden dunes at sunset in the Thar Desert"
+              fill
+              className="object-cover"
+              sizes="288px"
+            />
+            <div className="absolute inset-0 bg-[#0B0F19]/30" />
+          </div>
         </div>
-        <div className="absolute bottom-[15%] right-[18%] w-32 h-32 md:w-44 md:h-44 rounded-full overflow-hidden border border-[#C8A960]/20 shadow-2xl hidden lg:block">
-          <Image
-            src="/images/highlight-2.jpg"
-            alt="Travel highlight"
-            fill
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-[#0B0F19]/30" />
+        <div
+          className="hero-orb absolute bottom-[15%] right-[18%] w-32 h-32 md:w-44 md:h-44 hidden lg:block"
+          style={{ animationDelay: "0.75s" }}
+        >
+          <div
+            className="hero-orb-inner relative w-full h-full rounded-full overflow-hidden border border-[#C8A960]/20 shadow-2xl"
+            style={{ animationDelay: "1.6s", animationDuration: "9.5s" }}
+          >
+            <Image
+              src="/images/highlight-2.jpg"
+              alt="Snow-covered alpine peaks in winter"
+              fill
+              className="object-cover"
+              sizes="176px"
+            />
+            <div className="absolute inset-0 bg-[#0B0F19]/30" />
+          </div>
         </div>
 
         {/* Scroll indicator */}
