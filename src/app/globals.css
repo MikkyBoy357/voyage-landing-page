@@ -105,6 +105,49 @@ body {
   }
 }
 
+/* Hero orbs: settle into place on load, then drift gently.
+   Entrance and drift live on separate elements so their transforms
+   don't fight over the same property. */
+@keyframes orb-in {
+  from {
+    opacity: 0;
+    transform: scale(0.72) translateY(34px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes orb-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+.hero-orb {
+  opacity: 0;
+  animation: orb-in 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.hero-orb-inner {
+  animation: orb-float 8s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-orb {
+    opacity: 1;
+    animation: none;
+  }
+  .hero-orb-inner {
+    animation: none;
+  }
+}
+
 /* Parallax helper */
 .bg-fixed-safe {
   background-attachment: fixed;

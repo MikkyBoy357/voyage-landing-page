@@ -9,7 +9,7 @@
 export type MarkName = "compass" | "horizonRing" | "monogram" | "openHorizon" | "sextant"
 
 /** The mark currently in use. Change this one line to swap the logo. */
-export const ACTIVE_MARK: MarkName = "compass"
+export const ACTIVE_MARK: MarkName = "horizonRing"
 
 type MarkProps = { size?: number; className?: string }
 
